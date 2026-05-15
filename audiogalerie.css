@@ -1,0 +1,280 @@
+/* =============================================
+   CLASSIS / WeddingMusic – Audiogalerie styles
+   ============================================= */
+
+/* ---- AUDIO HERO ---- */
+.audio-hero {
+  padding: calc(var(--nav-h) + 5rem) 0 3rem;
+  text-align: center;
+}
+.audio-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0.75rem 0 1rem;
+}
+.audio-hero h1 em { color: var(--gold); font-style: italic; }
+.audio-hero p {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ---- TRACK LIST ---- */
+.audio-section {
+  padding: 2rem 0 8rem;
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.track-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s;
+}
+.track-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+.track-item:hover,
+.track-item.is-active {
+  background: rgba(201,169,110,0.07);
+  border-color: rgba(201,169,110,0.2);
+}
+.track-item.is-active .track-number { color: var(--gold); }
+.track-item.is-active .track-title  { color: var(--gold); }
+
+.track-number {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.track-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+.track-title .track-ver {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--muted);
+}
+.track-artist {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-tag {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,169,110,0.1);
+  border: 1px solid rgba(201,169,110,0.25);
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem;
+  white-space: nowrap;
+}
+
+.track-play-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(201,169,110,0.4);
+  background: transparent;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.track-play-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+  transform: scale(1.08);
+}
+.track-play-btn:hover svg { fill: var(--dark); }
+.track-play-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  fill: var(--gold);
+  stroke: none;
+}
+.track-play-btn .icon-pause rect { fill: var(--gold); }
+.track-play-btn:hover .icon-pause rect { fill: var(--dark); }
+.track-play-btn .hidden { display: none; }
+
+/* active row button */
+.track-item.is-active .track-play-btn {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.track-item.is-active .track-play-btn svg { fill: var(--dark); }
+.track-item.is-active .track-play-btn .icon-pause rect { fill: var(--dark); }
+
+/* ---- STICKY PLAYER BAR ---- */
+.player-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(15,15,15,0.97);
+  border-top: 1px solid rgba(201,169,110,0.3);
+  backdrop-filter: blur(12px);
+  transform: translateY(100%);
+  transition: transform 0.35s var(--ease-out);
+  z-index: 200;
+}
+.player-bar.visible { transform: translateY(0); }
+
+.player-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.player-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.player-artist {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.player-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  transition: color 0.2s;
+}
+.player-btn:hover { color: var(--gold); }
+.player-btn--play {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--gold) !important;
+  color: var(--gold);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.15s;
+}
+.player-btn--play:hover {
+  background: var(--gold);
+  color: var(--dark);
+  transform: scale(1.07);
+}
+.player-btn--play svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  fill: var(--gold);
+  stroke: none;
+}
+.player-btn--play:hover svg { fill: var(--dark); }
+.player-btn--play .icon-pause rect { fill: var(--gold); }
+.player-btn--play:hover .icon-pause rect { fill: var(--dark); }
+.player-btn--play .hidden { display: none; }
+
+.player-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+.player-time, .player-duration {
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.progress-bar {
+  flex: 1;
+  max-width: 220px;
+  height: 3px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.25s linear;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 680px) {
+  .track-item {
+    grid-template-columns: 2.2rem 1fr auto;
+    gap: 0.75rem;
+    padding: 0.9rem 0.75rem;
+  }
+  .track-tag { display: none; }
+
+  .player-inner {
+    grid-template-columns: 1fr auto;
+    padding: 0.6rem 1rem;
+    gap: 0.75rem;
+  }
+  .player-progress { display: none; }
+}

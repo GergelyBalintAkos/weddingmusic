@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audiogalerie – CLASSIS / WeddingMusic</title>
+  <meta name="description" content="Ascultă repertoriul nostru – piese clasice, romantice și populare interpretate de CLASSIS WeddingMusic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="audiogalerie.css" />
+</head>
+<body class="page-audio">
+
+  <!-- NAV -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <span class="logo-main">CLASSIS</span>
+        <span class="logo-sub">WeddingMusic</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Meniu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">Despre Noi</a></li>
+        <li><a href="index.html#services">Servicii</a></li>
+        <li><a href="galerie.html">Galerie foto</a></li>
+        <li><a href="audiogalerie.html" class="active">Galerie audio</a></li>
+        <li><a href="index.html#testimonials">Recenzii</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="audio-hero">
+    <div class="container">
+      <span class="section-label fade-in">Audiogalerie</span>
+      <h1 class="fade-in">Ascultă <em>repertoriul nostru</em></h1>
+      <p class="fade-in">Piese clasice, romantice și populare – interpretate live de CLASSIS WeddingMusic.</p>
+    </div>
+  </section>
+
+  <!-- TRACK LIST -->
+  <section class="audio-section">
+    <div class="container">
+      <ul class="track-list" id="trackList">
+
+        <li class="track-item fade-in" data-index="0">
+          <div class="track-number">01</div>
+          <div class="track-info">
+            <span class="track-title">A Thousand Years</span>
+            <span class="track-artist">Christina Perri</span>
+          </div>
+          <div class="track-tag">Romantic</div>
+          <button class="track-play-btn" aria-label="Redă A Thousand Years">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/thousand-years.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="1">
+          <div class="track-number">02</div>
+          <div class="track-info">
+            <span class="track-title">Por Una Cabeza</span>
+            <span class="track-artist">Carlos Gardel</span>
+          </div>
+          <div class="track-tag">Tango</div>
+          <button class="track-play-btn" aria-label="Redă Por Una Cabeza">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/05-por-una-cabeza.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="2">
+          <div class="track-number">03</div>
+          <div class="track-info">
+            <span class="track-title">Black Eyes</span>
+            <span class="track-artist">Ochi Negri</span>
+          </div>
+          <div class="track-tag">Clasic</div>
+          <button class="track-play-btn" aria-label="Redă Black Eyes">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/06-black-eyes.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="3">
+          <div class="track-number">04</div>
+          <div class="track-info">
+            <span class="track-title">New York, New York</span>
+            <span class="track-artist">Frank Sinatra</span>
+          </div>
+          <div class="track-tag">Jazz</div>
+          <button class="track-play-btn" aria-label="Redă New York New York">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/07-new-york.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="4">
+          <div class="track-number">05</div>
+          <div class="track-info">
+            <span class="track-title">Misirlou</span>
+            <span class="track-artist">Dick Dale</span>
+          </div>
+          <div class="track-tag">World</div>
+          <button class="track-play-btn" aria-label="Redă Misirlou">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/08-misirlou.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="5">
+          <div class="track-number">06</div>
+          <div class="track-info">
+            <span class="track-title">Love and Marriage</span>
+            <span class="track-artist">Frank Sinatra</span>
+          </div>
+          <div class="track-tag">Jazz</div>
+          <button class="track-play-btn" aria-label="Redă Love and Marriage">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/09-love-and-marriage.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="6">
+          <div class="track-number">07</div>
+          <div class="track-info">
+            <span class="track-title">Brahms – Cântec de leagăn</span>
+            <span class="track-artist">Johannes Brahms</span>
+          </div>
+          <div class="track-tag">Clasic</div>
+          <button class="track-play-btn" aria-label="Redă Brahms">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/11-brahms.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="7">
+          <div class="track-number">08</div>
+          <div class="track-info">
+            <span class="track-title">Hora Mărțișor</span>
+            <span class="track-artist">Popular românesc</span>
+          </div>
+          <div class="track-tag">Popular</div>
+          <button class="track-play-btn" aria-label="Redă Hora Martisor">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/16-hora-martisor.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="8">
+          <div class="track-number">09</div>
+          <div class="track-info">
+            <span class="track-title">Che Sarà</span>
+            <span class="track-artist">José Feliciano</span>
+          </div>
+          <div class="track-tag">Romantic</div>
+          <button class="track-play-btn" aria-label="Redă Che Sera">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/24-che-sera.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="9">
+          <div class="track-number">10</div>
+          <div class="track-info">
+            <span class="track-title">Dunărea</span>
+            <span class="track-artist">Popular românesc</span>
+          </div>
+          <div class="track-tag">Popular</div>
+          <button class="track-play-btn" aria-label="Redă Dunarea">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/28-dunarea.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="10">
+          <div class="track-number">11</div>
+          <div class="track-info">
+            <span class="track-title">Tico Tico</span>
+            <span class="track-artist">Zequinha de Abreu</span>
+          </div>
+          <div class="track-tag">Latin</div>
+          <button class="track-play-btn" aria-label="Redă Tico Tico">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/29-tico-tico.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="11">
+          <div class="track-number">12</div>
+          <div class="track-info">
+            <span class="track-title">Tico Tico <em class="track-ver">(cu intro de pian)</em></span>
+            <span class="track-artist">Zequinha de Abreu</span>
+          </div>
+          <div class="track-tag">Latin</div>
+          <button class="track-play-btn" aria-label="Redă Tico Tico cu pian intro">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/29-tico-tico-pian-intro.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="12">
+          <div class="track-number">13</div>
+          <div class="track-info">
+            <span class="track-title">Ballade pour Adeline</span>
+            <span class="track-artist">Richard Clayderman</span>
+          </div>
+          <div class="track-tag">Romantic</div>
+          <button class="track-play-btn" aria-label="Redă Ballade pour Adeline">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/44-ballade-pour-adeline.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="13">
+          <div class="track-number">14</div>
+          <div class="track-info">
+            <span class="track-title">Wedding March</span>
+            <span class="track-artist">Felix Mendelssohn</span>
+          </div>
+          <div class="track-tag">Nuntă</div>
+          <button class="track-play-btn" aria-label="Redă Wedding March">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/46-wedding-march.mp3" preload="none"></audio>
+        </li>
+
+        <li class="track-item fade-in" data-index="14">
+          <div class="track-number">15</div>
+          <div class="track-info">
+            <span class="track-title">La Mulți Ani</span>
+            <span class="track-artist">Tradiție românească</span>
+          </div>
+          <div class="track-tag">Popular</div>
+          <button class="track-play-btn" aria-label="Redă La Multi Ani">
+            <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <audio src="audio/47-la-multi-ani.mp3" preload="none"></audio>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- STICKY PLAYER -->
+  <div class="player-bar" id="playerBar" aria-hidden="true">
+    <div class="player-inner">
+      <div class="player-info">
+        <span class="player-title" id="playerTitle">–</span>
+        <span class="player-artist" id="playerArtist">–</span>
+      </div>
+      <div class="player-controls">
+        <button class="player-btn" id="playerPrev" aria-label="Anterior">&#8249;</button>
+        <button class="player-btn player-btn--play" id="playerPlayPause" aria-label="Redă/Pauză">
+          <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          <svg class="icon-pause hidden" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </button>
+        <button class="player-btn" id="playerNext" aria-label="Următor">&#8250;</button>
+      </div>
+      <div class="player-progress">
+        <span class="player-time" id="playerTime">0:00</span>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="player-duration" id="playerDuration">0:00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="gallery-cta">
+    <div class="container">
+      <h2 class="fade-in">Vrei muzica noastră la <em>evenimentul tău</em>?</h2>
+      <a href="index.html#contact" class="btn btn-primary fade-in">Solicită o ofertă</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-main">CLASSIS</span>
+        <span class="logo-sub">WeddingMusic</span>
+        <p>Servicii de organizare și interpretare artistică.<br />Cluj-Napoca, România</p>
+      </div>
+      <div class="footer-links">
+        <nav>
+          <a href="index.html#about">Despre Noi</a>
+          <a href="index.html#services">Servicii</a>
+          <a href="galerie.html">Galerie foto</a>
+          <a href="audiogalerie.html">Audiogalerie</a>
+          <a href="index.html#testimonials">Recenzii</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:0721262464">0721 262 464</a>
+        <a href="mailto:info@weddingmusic.ro">info@weddingmusic.ro</a>
+        <span>Napoca nr. 2-4, Cluj-Napoca</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 CLASSIS / WeddingMusic. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="audiogalerie.js"></script>
+</body>
+</html>
