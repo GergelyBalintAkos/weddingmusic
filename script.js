@@ -72,16 +72,18 @@ function animateCount(el, target, duration = 1800) {
 }
 
 const statsSection = document.getElementById('stats');
-let countStarted = false;
-const statsObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting && !countStarted) {
-    countStarted = true;
-    document.querySelectorAll('.stat-number').forEach(el => {
-      animateCount(el, parseInt(el.dataset.target, 10));
-    });
-  }
-}, { threshold: 0.4 });
-statsObserver.observe(statsSection);
+if (statsSection) {
+  let countStarted = false;
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !countStarted) {
+      countStarted = true;
+      document.querySelectorAll('.stat-number').forEach(el => {
+        animateCount(el, parseInt(el.dataset.target, 10));
+      });
+    }
+  }, { threshold: 0.4 });
+  statsObserver.observe(statsSection);
+}
 
 // ---- Smooth active nav highlight ----
 const sections = document.querySelectorAll('section[id]');
@@ -100,7 +102,7 @@ window.addEventListener('scroll', () => {
 
 // ---- Contact form – simple feedback ----
 const form = document.getElementById('contactForm');
-form.addEventListener('submit', (e) => {
+if (form) form.addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = form.querySelector('.btn-submit');
   const original = btn.innerHTML;
@@ -114,3 +116,5 @@ form.addEventListener('submit', (e) => {
     form.reset();
   }, 3500);
 });
+
+// (the rest of stats observer code below was already conditional)

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie Foto – CLASSIS / WeddingMusic</title>
+  <meta name="description" content="Galeria foto a evenimentelor noastre – nunți, concerte și momente speciale." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-gallery">
+
+  <!-- NAV -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <span class="logo-main">CLASSIS</span>
+        <span class="logo-sub">WeddingMusic</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Meniu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">Despre Noi</a></li>
+        <li><a href="index.html#services">Servicii</a></li>
+        <li><a href="galerie.html" class="active">Galerie foto</a></li>
+        <li><a href="index.html#testimonials">Recenzii</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- GALLERY HEADER -->
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="section-label fade-in">Galerie foto</span>
+      <h1 class="fade-in">Momente <em>capturate</em></h1>
+      <p class="fade-in">O privire în culisele evenimentelor noastre – de la natura toamnei, la sălile elegante și ceremoniile rafinate.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid">
+        <figure class="gallery-item fade-in tall" data-index="0">
+          <img src="images/gallery-01.jpg" alt="Ansamblu CLASSIS în peisaj de toamnă cu pian alb" loading="lazy" />
+          <figcaption>
+            <span class="cap-title">Pian în natură</span>
+            <span class="cap-sub">Sesiune foto de toamnă</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item fade-in" data-index="1">
+          <img src="images/gallery-02.jpg" alt="Ansamblul cântând în natură, frunze de toamnă" loading="lazy" />
+          <figcaption>
+            <span class="cap-title">Interpretare în aer liber</span>
+            <span class="cap-sub">Sesiune artistică</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item fade-in" data-index="2">
+          <img src="images/gallery-03.jpg" alt="Cvartet la o vernisaj de artă" loading="lazy" />
+          <figcaption>
+            <span class="cap-title">Vernisaj</span>
+            <span class="cap-sub">Eveniment cultural</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item fade-in wide" data-index="3">
+          <img src="images/gallery-04.jpg" alt="Cvintet de coarde la o nuntă elegantă" loading="lazy" />
+          <figcaption>
+            <span class="cap-title">Nuntă în sala mare</span>
+            <span class="cap-sub">Ceremonie & recepție</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item fade-in wide" data-index="4">
+          <img src="images/gallery-05.jpg" alt="Recepție cu cină gală și muzicieni" loading="lazy" />
+          <figcaption>
+            <span class="cap-title">Cină festivă</span>
+            <span class="cap-sub">Eveniment privat</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Închide">&times;</button>
+    <button class="lb-prev"  id="lbPrev"  aria-label="Anterior">&#8249;</button>
+    <button class="lb-next"  id="lbNext"  aria-label="Următor">&#8250;</button>
+    <div class="lb-stage">
+      <img id="lbImage" src="" alt="" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="gallery-cta">
+    <div class="container">
+      <h2 class="fade-in">Vrei muzica noastră la <em>evenimentul tău</em>?</h2>
+      <a href="index.html#contact" class="btn btn-primary fade-in">Solicită o ofertă</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-main">CLASSIS</span>
+        <span class="logo-sub">WeddingMusic</span>
+        <p>Servicii de organizare și interpretare artistică.<br />Cluj-Napoca, România</p>
+      </div>
+      <div class="footer-links">
+        <nav>
+          <a href="index.html#about">Despre Noi</a>
+          <a href="index.html#services">Servicii</a>
+          <a href="galerie.html">Galerie foto</a>
+          <a href="index.html#testimonials">Recenzii</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:0721262464">0721 262 464</a>
+        <a href="mailto:info@weddingmusic.ro">info@weddingmusic.ro</a>
+        <span>Napoca nr. 2-4, Cluj-Napoca</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 CLASSIS / WeddingMusic. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
