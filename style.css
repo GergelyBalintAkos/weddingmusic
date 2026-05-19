@@ -209,10 +209,19 @@ em { font-style: italic; color: var(--gold-light); }
     );
   pointer-events: none;
 }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(15,15,15,0.5) 0%, rgba(20,20,16,0.3) 100%);
+  background: linear-gradient(135deg, rgba(15,15,15,0.55) 0%, rgba(20,20,16,0.4) 100%);
+  z-index: 1;
 }
 .hero-content {
   position: relative;
