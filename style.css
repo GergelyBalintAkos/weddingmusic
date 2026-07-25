@@ -380,7 +380,7 @@ em { font-style: italic; color: var(--gold-light); }
 }
 .stat-value {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
 }
 .stat-number {
   font-family: var(--font-serif);
