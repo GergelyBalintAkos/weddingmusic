@@ -12,11 +12,14 @@ const lbNext    = document.getElementById('lbNext');
 
 let currentIndex = 0;
 
-const photos = Array.from(galleryItems).map(item => ({
-  src:     item.querySelector('img').getAttribute('src'),
-  title:   item.querySelector('.cap-title')?.textContent || '',
-  sub:     item.querySelector('.cap-sub')?.textContent || '',
-}));
+const photos = Array.from(galleryItems).map(item => {
+  const img = item.querySelector('img');
+  return {
+    src:   img.getAttribute('data-full') || img.getAttribute('src'),
+    title: item.querySelector('.cap-title')?.textContent || '',
+    sub:   item.querySelector('.cap-sub')?.textContent || '',
+  };
+});
 
 function openLightbox(index) {
   currentIndex = index;
