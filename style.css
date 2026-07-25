@@ -115,6 +115,8 @@ em { font-style: italic; color: var(--gold-light); }
   font-size: 1.35rem;
   letter-spacing: 0.12em;
   color: var(--white);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  transition: color 0.4s var(--ease), text-shadow 0.4s var(--ease);
 }
 .logo-sub {
   font-family: var(--font-sans);
@@ -122,6 +124,8 @@ em { font-style: italic; color: var(--gold-light); }
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--gold);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  transition: color 0.4s var(--ease), text-shadow 0.4s var(--ease);
 }
 .nav-links {
   display: flex;
@@ -170,22 +174,25 @@ em { font-style: italic; color: var(--gold-light); }
   border: none;
   cursor: pointer;
   padding: 4px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+  transition: filter 0.4s var(--ease);
 }
 .nav-toggle span {
   display: block;
   width: 24px; height: 1px;
   background: var(--white);
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, background 0.4s var(--ease);
 }
 
 /* Nav starts light-on-video over the hero; once scrolled (or on
    inner pages, which render pre-scrolled) it sits on a cream bar
    and needs dark ink for contrast. */
-#navbar.scrolled .logo-main { color: var(--ink); }
-#navbar.scrolled .logo-sub { color: var(--gold-deep); }
+#navbar.scrolled .logo-main { color: var(--ink); text-shadow: none; }
+#navbar.scrolled .logo-sub { color: var(--gold-deep); text-shadow: none; }
 #navbar.scrolled .nav-links a { color: rgba(62, 54, 44, 0.75); }
 #navbar.scrolled .nav-links a:hover { color: var(--ink); }
 #navbar.scrolled .nav-links a.active { color: var(--gold-deep); }
+#navbar.scrolled .nav-toggle { filter: none; }
 #navbar.scrolled .nav-toggle span { background: var(--ink); }
 
 /* =============================================
