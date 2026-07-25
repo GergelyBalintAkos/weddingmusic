@@ -499,13 +499,17 @@ em { font-style: italic; color: var(--gold-light); }
   padding: 8rem 0;
 }
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 .testimonial-card {
-  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 2rem 2.75rem;
   border: 1px solid rgba(201, 169, 110, 0.15);
   position: relative;
   transition: border-color 0.3s;
@@ -515,12 +519,11 @@ em { font-style: italic; color: var(--gold-light); }
 }
 .quote-mark {
   font-family: var(--font-serif);
-  font-size: 5rem;
+  font-size: 3.4rem;
   line-height: 0.6;
   color: var(--gold);
   opacity: 0.35;
-  margin-bottom: 1.5rem;
-  display: block;
+  flex-shrink: 0;
 }
 .testimonial-card > p {
   font-size: 0.9rem;
@@ -528,14 +531,17 @@ em { font-style: italic; color: var(--gold-light); }
   color: rgba(245, 243, 239, 0.7);
   line-height: 1.85;
   font-style: italic;
-  margin-bottom: 2rem;
+  margin: 0;
 }
 .testimonial-author {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(201, 169, 110, 0.15);
+  padding-left: 2.25rem;
+  border-left: 1px solid rgba(201, 169, 110, 0.15);
+  min-width: 200px;
+  text-align: right;
+  flex-shrink: 0;
 }
 .author-name {
   font-family: var(--font-serif);
@@ -547,6 +553,23 @@ em { font-style: italic; color: var(--gold-light); }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  .quote-mark { font-size: 2.75rem; }
+  .testimonial-author {
+    padding-left: 0;
+    padding-top: 1.25rem;
+    border-left: none;
+    border-top: 1px solid rgba(201, 169, 110, 0.15);
+    text-align: left;
+    min-width: 0;
+  }
 }
 .section-cta {
   text-align: center;
@@ -987,7 +1010,6 @@ em { font-style: italic; color: var(--gold-light); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-item::after { display: none; }
   .services-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
   .contact-form { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
   .about-team { flex-direction: column; gap: 1.2rem; }
