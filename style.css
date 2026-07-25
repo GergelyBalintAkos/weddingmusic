@@ -494,7 +494,8 @@ em { font-style: italic; color: var(--gold-light); }
 /* =============================================
    TESTIMONIALS
    ============================================= */
-#testimonials {
+#testimonials,
+.testimonials-section {
   padding: 8rem 0;
 }
 .testimonials-grid {
@@ -546,6 +547,10 @@ em { font-style: italic; color: var(--gold-light); }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
+}
+.section-cta {
+  text-align: center;
+  margin-top: 3.5rem;
 }
 
 /* =============================================
@@ -990,7 +995,7 @@ em { font-style: italic; color: var(--gold-light); }
 
 @media (max-width: 480px) {
   .container { padding: 0 1.25rem; }
-  #about, #services, #testimonials, #contact { padding: 5rem 0; }
+  #about, #services, #testimonials, #contact, .testimonials-section { padding: 5rem 0; }
   .contact-form-wrap { padding: 2rem 1.5rem; }
   .hero-actions { flex-direction: column; align-items: center; }
 }
