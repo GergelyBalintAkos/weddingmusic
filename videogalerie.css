@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(201, 169, 110, 0.12), var(--dark-soft) 70%);
+  background: linear-gradient(135deg, rgba(176, 141, 87, 0.18), var(--cream-soft) 70%);
 }
 .ig-icon {
   width: 42px;
@@ -38,8 +38,8 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  background: var(--dark-soft);
-  border: 1px solid rgba(201, 169, 110, 0.08);
+  background: var(--cream-soft);
+  border: 1px solid rgba(176, 141, 87, 0.15);
 }
 .video-thumb img {
   width: 100%;
@@ -64,7 +64,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  border: 1px solid rgba(201, 169, 110, 0.5);
+  border: 1px solid rgba(176, 141, 87, 0.5);
   background: rgba(15, 15, 15, 0.55);
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   border-color: var(--gold);
   transform: scale(1.08);
 }
-.video-item:hover .play-badge svg { fill: var(--dark); }
+.video-item:hover .play-badge svg { fill: var(--ink); }
 
 .video-caption {
   padding: 1rem 0.1rem 0;
@@ -90,7 +90,7 @@
 .video-caption .cap-title {
   display: block;
   font-family: var(--font-serif);
-  color: var(--white);
+  color: var(--ink);
   font-size: 1rem;
   line-height: 1.4;
 }
@@ -100,7 +100,7 @@
   position: relative;
   width: min(90vw, 960px);
   aspect-ratio: 16 / 9;
-  border: 1px solid rgba(201, 169, 110, 0.2);
+  border: 1px solid rgba(176, 141, 87, 0.25);
   background: #000;
 }
 .lb-video-wrap iframe {
