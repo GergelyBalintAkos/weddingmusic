@@ -380,7 +380,7 @@ em { font-style: italic; color: var(--gold-light); }
 }
 .stat-value {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
 }
 .stat-number {
   font-family: var(--font-serif);
@@ -393,7 +393,7 @@ em { font-style: italic; color: var(--gold-light); }
   font-family: var(--font-serif);
   font-size: 2rem;
   color: var(--gold);
-  margin-top: 0.3rem;
+  line-height: 1;
 }
 .stat-item p {
   font-size: 0.72rem;
