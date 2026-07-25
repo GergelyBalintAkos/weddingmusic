@@ -378,6 +378,10 @@ em { font-style: italic; color: var(--gold-light); }
   width: 1px;
   background: rgba(176, 141, 87, 0.2);
 }
+.stat-value {
+  display: inline-flex;
+  align-items: flex-start;
+}
 .stat-number {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 4vw, 4rem);
@@ -389,7 +393,6 @@ em { font-style: italic; color: var(--gold-light); }
   font-family: var(--font-serif);
   font-size: 2rem;
   color: var(--gold);
-  align-self: flex-start;
   margin-top: 0.3rem;
 }
 .stat-item p {
@@ -399,7 +402,6 @@ em { font-style: italic; color: var(--gold-light); }
   color: var(--muted);
   font-weight: 400;
 }
-.stat-number, .stat-plus { display: inline; }
 
 /* =============================================
    ABOUT
