@@ -2,7 +2,7 @@
    Video Gallery Lightbox
    ============================================= */
 
-const videoItems  = document.querySelectorAll('.video-item');
+const videoItems  = document.querySelectorAll('.video-item[data-yt-id]');
 const lightbox    = document.getElementById('lightbox');
 const lbIframe     = document.getElementById('lbIframe');
 const lbCaption    = document.getElementById('lbCaption');
