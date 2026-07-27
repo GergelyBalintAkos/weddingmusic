@@ -189,8 +189,8 @@ em { font-style: italic; color: var(--gold-light); }
    and needs dark ink for contrast. */
 #navbar.scrolled .logo-main { text-shadow: none; }
 #navbar.scrolled .logo-sub { color: var(--gold-deep); text-shadow: none; }
-#navbar.scrolled .nav-links a { color: rgba(62, 54, 44, 0.75); }
-#navbar.scrolled .nav-links a:hover { color: var(--ink); }
+#navbar.scrolled .nav-links a { color: var(--ink); }
+#navbar.scrolled .nav-links a:hover { color: var(--gold-deep); }
 #navbar.scrolled .nav-links a.active { color: var(--gold-deep); }
 #navbar.scrolled .nav-toggle { filter: none; }
 #navbar.scrolled .nav-toggle span { background: var(--ink); }
@@ -1077,8 +1077,8 @@ em { font-style: italic; color: var(--gold-light); }
     backdrop-filter: blur(12px);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { color: rgba(62, 54, 44, 0.75); }
-  .nav-links a:hover { color: var(--ink); }
+  .nav-links a { color: var(--ink); }
+  .nav-links a:hover { color: var(--gold-deep); }
   .nav-links a.active { color: var(--gold-deep); }
   .nav-toggle { display: flex; }
 
