@@ -105,11 +105,11 @@
           </div>
           <div class="form-group">
             <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" placeholder="07xx xxx xxx" />
+            <input type="tel" id="phone" name="phone" placeholder="07xx xxx xxx" required />
           </div>
           <div class="form-group">
-            <label for="event">Tip eveniment</label>
-            <select id="event" name="event">
+            <label for="event">Tipul evenimentului</label>
+            <select id="event" name="event" required>
               <option value="" disabled selected>Selectează tipul</option>
               <option value="nunta">Nuntă</option>
               <option value="corporate">Eveniment Corporate</option>
@@ -117,9 +117,17 @@
               <option value="altul">Altul</option>
             </select>
           </div>
+          <div class="form-group">
+            <label for="eventDate">Data evenimentului</label>
+            <input type="date" id="eventDate" name="eventDate" required />
+          </div>
+          <div class="form-group">
+            <label for="eventCity">Orașul/Locul evenimentului</label>
+            <input type="text" id="eventCity" name="eventCity" placeholder="Cluj-Napoca" required />
+          </div>
           <div class="form-group full-width">
             <label for="message">Mesaj</label>
-            <textarea id="message" name="message" rows="4" placeholder="Spune-ne despre evenimentul tău..."></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Spune-ne despre evenimentul tău..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-submit">
             Trimite mesajul
