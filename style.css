@@ -525,7 +525,7 @@ em { font-style: italic; color: var(--gold-light); }
    PAGE INTRO / ENSEMBLES
    ============================================= */
 .page-intro {
-  padding: 1rem 0 4rem;
+  padding: 4rem 0;
 }
 .page-intro p {
   max-width: 700px;
@@ -535,8 +535,22 @@ em { font-style: italic; color: var(--gold-light); }
   font-size: 1rem;
   line-height: 1.8;
 }
+.repertoire {
+  padding: 4rem 0;
+  background: var(--cream-mid);
+  border-top: 1px solid rgba(176, 141, 87, 0.15);
+  border-bottom: 1px solid rgba(176, 141, 87, 0.15);
+}
+.repertoire p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
 .ensembles {
-  padding: 8rem 0;
+  padding: 5rem 0 8rem;
 }
 .ensembles > .container > p {
   max-width: 700px;
@@ -550,6 +564,7 @@ em { font-style: italic; color: var(--gold-light); }
   font-family: var(--font-serif);
   font-size: 1.2rem;
   color: var(--ink);
+  margin-top: 2rem;
   margin-bottom: 3rem !important;
 }
 
