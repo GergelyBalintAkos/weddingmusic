@@ -3,14 +3,20 @@
    ============================================= */
 
 // ---- Navbar scroll effect ----
+// Only pages with a video hero (currently just the homepage) should
+// toggle the light-on-video vs. scrolled look. Inner pages render
+// pre-scrolled and must stay that way at every scroll position.
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-}, { passive: true });
+const hasHero = !!document.getElementById('hero');
+if (hasHero) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
 
 // ---- Mobile nav toggle ----
 const navToggle = document.getElementById('navToggle');
