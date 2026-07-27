@@ -856,6 +856,15 @@ em { font-style: italic; color: var(--gold-light); }
   font-weight: 400;
   line-height: 1.8;
 }
+.footer-avize {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.footer-avize:hover { color: var(--gold); }
 .footer-links nav {
   display: flex;
   flex-direction: column;
