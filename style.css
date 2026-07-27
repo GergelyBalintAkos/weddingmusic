@@ -928,6 +928,66 @@ em { font-style: italic; color: var(--gold-light); }
 .legal-content a:hover { color: var(--gold); }
 
 /* =============================================
+   EQUIPMENT
+   ============================================= */
+.equipment-section {
+  padding: 2rem 0 8rem;
+}
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.equipment-card {
+  background: var(--cream-soft);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+}
+.equipment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(176, 141, 87, 0.14);
+}
+.equipment-image {
+  background: var(--white);
+  border: 1px solid rgba(176, 141, 87, 0.2);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.equipment-image img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+.equipment-image--dual {
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.equipment-image--dual img { max-height: 90px; }
+.equipment-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.equipment-card p {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+@media (max-width: 640px) {
+  .equipment-grid { grid-template-columns: 1fr; }
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 /* =============================================
