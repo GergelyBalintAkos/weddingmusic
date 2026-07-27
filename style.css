@@ -780,6 +780,10 @@ em { font-style: italic; color: var(--gold-light); }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
+  line-height: 1.4;
+  min-height: 2.8em;
+  display: flex;
+  align-items: flex-end;
 }
 .form-group input,
 .form-group select,
