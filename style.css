@@ -839,6 +839,44 @@ em { font-style: italic; color: var(--gold-light); }
   color: var(--muted);
   letter-spacing: 0.1em;
 }
+.footer-legal,
+.footer-legal-links {
+  margin-bottom: 0.6rem;
+}
+.footer-legal-links a {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.footer-legal-links a:hover { color: var(--gold); }
+
+/* =============================================
+   LEGAL PAGES
+   ============================================= */
+.legal-content {
+  padding: 2rem 0 8rem;
+}
+.legal-content .container {
+  max-width: 760px;
+}
+.legal-content h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-top: 2.2rem;
+  margin-bottom: 0.7rem;
+}
+.legal-content p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.legal-content a {
+  color: var(--gold-deep);
+  text-decoration: underline;
+}
+.legal-content a:hover { color: var(--gold); }
 
 /* =============================================
    RESPONSIVE
