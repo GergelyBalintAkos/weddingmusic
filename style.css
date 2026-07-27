@@ -525,7 +525,7 @@ em { font-style: italic; color: var(--gold-light); }
    PAGE INTRO / ENSEMBLES
    ============================================= */
 .page-intro {
-  padding: 4rem 0;
+  padding: 0.5rem 0 4rem;
 }
 .page-intro p {
   max-width: 700px;
