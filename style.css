@@ -694,6 +694,12 @@ em { font-style: italic; color: var(--gold-light); }
   border-color: var(--gold);
   color: var(--gold);
 }
+.contact-note {
+  margin-top: 1.8rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--muted);
+}
 
 /* FORM */
 .contact-form-wrap {
