@@ -1042,7 +1042,7 @@ em { font-style: italic; color: var(--gold-light); }
    PORTFOLIO
    ============================================= */
 .portfolio-section {
-  padding: 2rem 0 8rem;
+  padding: 2rem 0 5rem;
 }
 .portfolio-grid {
   display: grid;
@@ -1078,6 +1078,35 @@ em { font-style: italic; color: var(--gold-light); }
 }
 @media (min-width: 1024px) {
   .portfolio-grid { grid-template-columns: repeat(5, 1fr); gap: 2.5rem; }
+}
+
+.portfolio-events {
+  padding: 1rem 0 7rem;
+}
+.events-label {
+  display: block;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.events-list {
+  max-width: 880px;
+  margin: 0 auto;
+  columns: 1;
+  column-gap: 3.5rem;
+}
+.events-list li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 300;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(176, 141, 87, 0.14);
+  break-inside: avoid;
+}
+.events-list li:last-child { border-bottom: none; }
+@media (min-width: 700px) {
+  .events-list { columns: 2; }
 }
 
 /* CTA */
