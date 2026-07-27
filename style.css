@@ -654,6 +654,14 @@ em { font-style: italic; color: var(--gold-light); }
   flex-direction: column;
   gap: 0.15rem;
 }
+.contact-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.contact-pair + .contact-pair {
+  margin-top: 0.7rem;
+}
 .contact-label {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
