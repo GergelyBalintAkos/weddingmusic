@@ -839,7 +839,6 @@ em { font-style: italic; color: var(--gold-light); }
   color: var(--muted);
   letter-spacing: 0.1em;
 }
-.footer-legal,
 .footer-legal-links {
   margin-bottom: 0.6rem;
 }
