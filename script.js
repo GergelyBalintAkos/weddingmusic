@@ -106,21 +106,37 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-// ---- Contact form – simple feedback ----
+// ---- Contact form – sends via FormSubmit ----
 const form = document.getElementById('contactForm');
 if (form) form.addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = form.querySelector('.btn-submit');
   const original = btn.innerHTML;
-  btn.innerHTML = 'Mesaj trimis ✓';
-  btn.style.background = '#4a7c59';
   btn.disabled = true;
-  setTimeout(() => {
-    btn.innerHTML = original;
-    btn.style.background = '';
-    btn.disabled = false;
-    form.reset();
-  }, 3500);
+  btn.innerHTML = 'Se trimite...';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' },
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error('Trimiterea a eșuat');
+      btn.innerHTML = 'Mesaj trimis ✓';
+      btn.style.background = '#4a7c59';
+      form.reset();
+    })
+    .catch(() => {
+      btn.innerHTML = 'Eroare — încearcă din nou';
+      btn.style.background = '#a83232';
+    })
+    .finally(() => {
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3500);
+    });
 });
 
 // (the rest of stats observer code below was already conditional)
