@@ -837,8 +837,8 @@ em { font-style: italic; color: var(--gold-light); }
 }
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 3rem;
   padding-bottom: 3rem;
 }
 .footer-brand .logo-main {
