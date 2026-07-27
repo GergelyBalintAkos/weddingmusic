@@ -130,17 +130,18 @@ em { font-style: italic; color: var(--gold-light); }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.85rem;
 }
 .nav-links a {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 400;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(245, 243, 239, 0.75);
   transition: color 0.25s;
   position: relative;
+  white-space: nowrap;
 }
 .nav-links a::after {
   content: '';
