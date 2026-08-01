@@ -972,6 +972,22 @@ em { font-style: italic; color: var(--gold-light); }
 .repertoire-category ul {
   margin-bottom: 0;
 }
+.legal-highlight {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(176, 141, 87, 0.2);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--ink);
+  text-align: center;
+}
+.legal-highlight a {
+  color: var(--gold-deep);
+  text-decoration: underline;
+}
+.legal-highlight a:hover {
+  color: var(--gold);
+}
 
 /* =============================================
    EQUIPMENT
