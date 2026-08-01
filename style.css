@@ -945,6 +945,23 @@ em { font-style: italic; color: var(--gold-light); }
   text-decoration: underline;
 }
 .legal-content a:hover { color: var(--gold); }
+.legal-content ul {
+  margin: 0 0 1rem;
+  padding-left: 0;
+}
+.legal-content li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.legal-content li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--gold-deep);
+}
 
 /* =============================================
    EQUIPMENT
