@@ -951,15 +951,17 @@ em { font-style: italic; color: var(--gold-light); }
 }
 .legal-content li {
   position: relative;
-  padding-left: 1.3rem;
+  padding-left: 1.5rem;
   color: var(--ink-soft);
   font-size: 0.95rem;
   line-height: 1.8;
 }
 .legal-content li::before {
-  content: "—";
+  content: "•";
   position: absolute;
-  left: 0;
+  top: 0.55em;
+  left: 0.3rem;
+  font-size: 0.7em;
   color: var(--gold-deep);
 }
 .repertoire-category {
