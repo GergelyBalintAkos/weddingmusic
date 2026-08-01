@@ -825,10 +825,16 @@ em { font-style: italic; color: var(--gold-light); }
   font-family: var(--font-sans);
 }
 .form-note {
-  grid-column: 1 / -1;
   font-size: 0.72rem;
   color: var(--muted);
   text-align: center;
+}
+.form-notes {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* =============================================
