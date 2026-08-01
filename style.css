@@ -962,6 +962,16 @@ em { font-style: italic; color: var(--gold-light); }
   left: 0;
   color: var(--gold-deep);
 }
+.repertoire-category {
+  margin-bottom: 2rem;
+}
+.repertoire-category .section-label {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.repertoire-category ul {
+  margin-bottom: 0;
+}
 
 /* =============================================
    EQUIPMENT
