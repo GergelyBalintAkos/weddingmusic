@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLASSIS – WeddingMusic</title>
-  <meta name="description" content="Professional wedding and event music services. Over 20 years of experience, 800+ weddings, Cluj-Napoca." />
+  <title>About Us – CLASSIS / WeddingMusic</title>
+  <meta name="description" content="About CLASSIS WeddingMusic – music for weddings and elegant events, Cluj-Napoca." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
+<body class="page-about">
 
   <!-- NAV -->
-  <nav id="navbar">
+  <nav id="navbar" class="scrolled">
     <div class="nav-inner">
-      <a class="nav-logo" href="#hero">
+      <a class="nav-logo" href="index.html">
         <span class="logo-main">CLASSIS</span>
         <span class="logo-sub">by WeddingMusic</span>
       </a>
@@ -23,7 +23,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="despre-noi.html">About Us</a></li>
+        <li><a href="despre-noi.html" class="active">About Us</a></li>
         <li><a href="servicii.html">Services</a></li>
         <li><a href="repertoriu.html">Repertoire</a></li>
         <li><a href="galerie.html">Photos</a></li>
@@ -33,54 +33,72 @@
         <li><a href="portofoliu.html">Portfolio</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
         <li class="lang-switcher">
-          <a href="../index.html" aria-label="Română">🇷🇴</a>
-          <a href="index.html" class="active" aria-label="English">🇬🇧</a>
-          <a href="../hu/index.html" aria-label="Magyar">🇭🇺</a>
+          <a href="../despre-noi.html" aria-label="Română">🇷🇴</a>
+          <a href="despre-noi.html" class="active" aria-label="English">🇬🇧</a>
+          <a href="../hu/despre-noi.html" aria-label="Magyar">🇭🇺</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="../video/slider.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content fade-in">
-      <p class="hero-eyebrow">Music for special moments</p>
-      <h1>Atmosphere and elegance<br /><em>for your event</em></h1>
-      <p class="hero-desc">Event organization and artistic performance services</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
-        <a href="servicii.html" class="btn btn-ghost">Discover Our Services</a>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span></span>
-      <p>Scroll</p>
+  <!-- HEADER -->
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="section-label fade-in">About us</span>
+      <h1 class="fade-in">About Us</h1>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section id="stats">
+  <!-- STORY -->
+  <section class="page-intro">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="22">0</span><span class="stat-plus">+</span></span>
-          <p>Years of Experience</p>
+      <p class="fade-in">With over 20 years of experience in event organization and musical production, we have built a career based on professionalism, creativity, and valuable collaborations. Every project is a new opportunity to create moments that remain in memory.</p>
+    </div>
+  </section>
+
+  <!-- REPERTOIRE -->
+  <section class="repertoire">
+    <div class="container">
+      <p class="fade-in">Our repertoire includes celebrated classical pieces, Viennese waltzes, tangos, salon music, café-concert, world hits, melodic jazz, film music, soundtracks, and modern hits.</p>
+    </div>
+  </section>
+
+  <!-- ENSEMBLES -->
+  <section class="ensembles">
+    <div class="container">
+      <p class="fade-in">To best meet your requirements and preferences, our repertoire is prepared for different musical formations, giving you the opportunity to choose the ensemble that best suits your event.</p>
+      <p class="ensembles-heading fade-in">We offer the following artistic ensembles:</p>
+      <div class="services-grid ensembles-grid">
+        <div class="service-card fade-in">
+          <h3>Trio</h3>
+          <p>Three artists: two violins and piano</p>
         </div>
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="350">0</span><span class="stat-plus">+</span></span>
-          <p>Weddings</p>
+        <div class="service-card fade-in">
+          <h3>String Quartet</h3>
+          <p>Four artists: two violins, viola, cello</p>
         </div>
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="40">0</span><span class="stat-plus">+</span></span>
-          <p>Concerts</p>
+        <div class="service-card fade-in">
+          <h3>Quartet with Piano</h3>
+          <p>Four artists: two violins, viola and piano</p>
+          <p>Four artists: two violins, cello and piano</p>
         </div>
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="30">0</span><span class="stat-plus">+</span></span>
-          <p>Corporate Events</p>
+        <div class="service-card fade-in">
+          <h3>String Quintet</h3>
+          <p>Five artists: two violins, viola, cello and double bass</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Quintet with Piano</h3>
+          <p>Five artists: two violins, viola, cello and piano</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Mini Orchestra</h3>
+          <p>Six artists: two violins, viola, cello, piano and double bass</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Ambient Jazz Piano</h3>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Other artistic ensembles upon request</h3>
         </div>
       </div>
     </div>

@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLASSIS – WeddingMusic</title>
-  <meta name="description" content="Professzionális esküvői és rendezvényzenei szolgáltatások. Több mint 20 év tapasztalat, 800+ esküvő, Kolozsvár." />
+  <title>Rólunk – CLASSIS / WeddingMusic</title>
+  <meta name="description" content="A CLASSIS WeddingMusicról – esküvői és elegáns rendezvényzene, Kolozsvár." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body>
+<body class="page-about">
 
   <!-- NAV -->
-  <nav id="navbar">
+  <nav id="navbar" class="scrolled">
     <div class="nav-inner">
-      <a class="nav-logo" href="#hero">
+      <a class="nav-logo" href="index.html">
         <span class="logo-main">CLASSIS</span>
         <span class="logo-sub">by WeddingMusic</span>
       </a>
@@ -23,7 +23,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="despre-noi.html">Rólunk</a></li>
+        <li><a href="despre-noi.html" class="active">Rólunk</a></li>
         <li><a href="servicii.html">Szolgáltatások</a></li>
         <li><a href="repertoriu.html">Repertoár</a></li>
         <li><a href="galerie.html">Fotó</a></li>
@@ -33,54 +33,72 @@
         <li><a href="portofoliu.html">Portfólió</a></li>
         <li><a href="contact.html" class="nav-cta">Kapcsolat</a></li>
         <li class="lang-switcher">
-          <a href="../index.html" aria-label="Română">🇷🇴</a>
-          <a href="../en/index.html" aria-label="English">🇬🇧</a>
-          <a href="index.html" class="active" aria-label="Magyar">🇭🇺</a>
+          <a href="../despre-noi.html" aria-label="Română">🇷🇴</a>
+          <a href="../en/despre-noi.html" aria-label="English">🇬🇧</a>
+          <a href="despre-noi.html" class="active" aria-label="Magyar">🇭🇺</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="../video/slider.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content fade-in">
-      <p class="hero-eyebrow">Zene a különleges pillanatokhoz</p>
-      <h1>Atmoszféra és elegancia<br /><em>az Ön rendezvényén</em></h1>
-      <p class="hero-desc">Rendezvényszervezési és művészi előadói szolgáltatások</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Kérjen ajánlatot</a>
-        <a href="servicii.html" class="btn btn-ghost">Fedezze fel szolgáltatásainkat</a>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span></span>
-      <p>Görgessen</p>
+  <!-- HEADER -->
+  <section class="gallery-hero">
+    <div class="container">
+      <span class="section-label fade-in">Rólunk</span>
+      <h1 class="fade-in">Rólunk</h1>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section id="stats">
+  <!-- STORY -->
+  <section class="page-intro">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="22">0</span><span class="stat-plus">+</span></span>
-          <p>Év tapasztalat</p>
+      <p class="fade-in">Több mint 20 éves rendezvényszervezési és zenei produkciós tapasztalattal olyan pályát építettünk, amely a professzionalizmusra, kreativitásra és értékes együttműködésekre épül. Minden projekt új lehetőség arra, hogy emlékezetes pillanatokat teremtsünk.</p>
+    </div>
+  </section>
+
+  <!-- REPERTOIRE -->
+  <section class="repertoire">
+    <div class="container">
+      <p class="fade-in">Repertoárunk híres klasszikus zeneműveket, bécsi keringőket, tangókat, szalonzenét, café-concert darabokat, világslágereket, dallamos jazzt, filmzenét, filmbetéteket és modern slágereket tartalmaz.</p>
+    </div>
+  </section>
+
+  <!-- ENSEMBLES -->
+  <section class="ensembles">
+    <div class="container">
+      <p class="fade-in">Hogy minél jobban megfeleljünk igényeinek és preferenciáinak, repertoárunkat különböző zenei felállásokra készítettük fel, lehetőséget adva Önnek, hogy az eseményéhez leginkább illő formációt válassza.</p>
+      <p class="ensembles-heading fade-in">Az alábbi művészeti formációkkal állunk rendelkezésére:</p>
+      <div class="services-grid ensembles-grid">
+        <div class="service-card fade-in">
+          <h3>Trió</h3>
+          <p>Három művész: két hegedű és zongora</p>
         </div>
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="350">0</span><span class="stat-plus">+</span></span>
-          <p>Esküvő</p>
+        <div class="service-card fade-in">
+          <h3>Vonósnégyes</h3>
+          <p>Négy művész: két hegedű, brácsa, cselló</p>
         </div>
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="40">0</span><span class="stat-plus">+</span></span>
-          <p>Koncert</p>
+        <div class="service-card fade-in">
+          <h3>Kvartett zongorával</h3>
+          <p>Négy művész: két hegedű, brácsa és zongora</p>
+          <p>Négy művész: két hegedű, cselló és zongora</p>
         </div>
-        <div class="stat-item fade-in">
-          <span class="stat-value"><span class="stat-number" data-target="30">0</span><span class="stat-plus">+</span></span>
-          <p>Céges rendezvény</p>
+        <div class="service-card fade-in">
+          <h3>Vonósötös</h3>
+          <p>Öt művész: két hegedű, brácsa, cselló és nagybőgő</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Kvintett zongorával</h3>
+          <p>Öt művész: két hegedű, brácsa, cselló és zongora</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Mini zenekar</h3>
+          <p>Hat művész: két hegedű, brácsa, cselló, zongora és nagybőgő</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Ambient jazz zongora</h3>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Egyéb művészeti formációk kérésre</h3>
         </div>
       </div>
     </div>
