@@ -167,11 +167,15 @@ em { font-style: italic; color: var(--gold-light); }
 }
 .nav-cta::after { display: none !important; }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
 .lang-switcher {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  margin-left: 0.4rem;
 }
 .lang-switcher a {
   font-size: 1rem;
