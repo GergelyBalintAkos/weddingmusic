@@ -1342,6 +1342,12 @@ em { font-style: italic; color: var(--gold-light); }
   .lb-next { right: 0.75rem; }
   .lb-close { top: 1rem; right: 1rem; width: 38px; height: 38px; }
 
+  /* backdrop-filter on #navbar creates a new containing block for
+     position:fixed descendants, which traps the fixed .nav-links
+     dropdown inside the navbar's own 72px-tall box instead of the
+     viewport. Drop it here; .nav-links has its own blur anyway. */
+  #navbar.scrolled { backdrop-filter: none; }
+
   .nav-links {
     display: none;
     position: fixed;
