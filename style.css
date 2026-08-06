@@ -1336,17 +1336,12 @@ em { font-style: italic; color: var(--gold-light); }
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 768px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item.wide, .gallery-item.tall {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  .lb-prev, .lb-next { width: 42px; height: 42px; font-size: 1.5rem; }
-  .lb-prev { left: 0.75rem; }
-  .lb-next { right: 0.75rem; }
-  .lb-close { top: 1rem; right: 1rem; width: 38px; height: 38px; }
-
+/* Below this width the full nav-links row (9 items) plus the
+   lang-switcher no longer fit the viewport and the switcher gets
+   pushed off-screen with no visual indication. Collapse to the
+   hamburger menu well before that happens so logo + lang-switcher
+   + toggle always have room. */
+@media (max-width: 1150px) {
   /* backdrop-filter on #navbar creates a new containing block for
      position:fixed descendants, which traps the fixed .nav-links
      dropdown inside the navbar's own 72px-tall box instead of the
@@ -1369,6 +1364,18 @@ em { font-style: italic; color: var(--gold-light); }
   .nav-links a:hover { color: var(--gold-deep); }
   .nav-links a.active { color: var(--gold-deep); }
   .nav-toggle { display: flex; }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.wide, .gallery-item.tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .lb-prev, .lb-next { width: 42px; height: 42px; font-size: 1.5rem; }
+  .lb-prev { left: 0.75rem; }
+  .lb-next { right: 0.75rem; }
+  .lb-close { top: 1rem; right: 1rem; width: 38px; height: 38px; }
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-item::after { display: none; }
