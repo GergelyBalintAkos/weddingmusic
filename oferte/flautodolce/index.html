@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ansamblul Flauto Dolce — Ofertă artistică</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,560;1,9..144,450&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f6f4;
+    --surface:#ffffff;
+    --ink:#24262b;
+    --muted:#787c82;
+    --accent:#a3803f;
+    --accent-quiet:#c7ac78;
+    --hair:rgba(36,38,43,.14);
+    --maxw:900px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Instrument Sans',sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;}
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:450;
+    margin:0;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  a{color:inherit;}
+
+  /* ---------- COVER ---------- */
+  .cover{padding:70px 0 54px;text-align:center;}
+  .cover .kicker{
+    font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 20px;
+  }
+  .cover .brand{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 30px;
+  }
+  .cover h1{
+    font-size:clamp(30px,5.8vw,46px);font-style:normal;font-weight:450;line-height:1.18;
+    letter-spacing:.003em;
+  }
+  .cover .subtitle{
+    margin-top:12px;font-family:'Fraunces',serif;font-size:17px;color:var(--accent);
+    max-width:480px;margin-left:auto;margin-right:auto;
+  }
+  .hero-photo{
+    margin:34px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  }
+  .hero-photo img{
+    width:100%;display:block;aspect-ratio:3/2;object-fit:cover;
+  }
+  .rule{width:1px;height:40px;background:linear-gradient(var(--accent-quiet),transparent);margin:30px auto;}
+  .cover p.lead{max-width:580px;margin:0 auto;font-size:16px;color:var(--muted);}
+  .instrumentation{
+    margin-top:32px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
+  }
+  .instrumentation .sep{color:var(--accent);padding:0 10px;}
+  .cover .facts{
+    margin-top:14px;font-size:13.5px;color:var(--muted);font-style:italic;font-family:'Fraunces',serif;
+  }
+  .cover .variant{
+    margin-top:8px;font-size:12.5px;color:var(--muted);font-style:italic;font-family:'Fraunces',serif;
+  }
+
+  section{padding:52px 0;border-top:1px solid var(--hair);}
+  .section-head{text-align:center;margin-bottom:34px;}
+  .section-head .num{
+    display:block;font-family:'Fraunces',serif;font-style:italic;
+    color:var(--accent);font-size:13.5px;letter-spacing:.05em;margin-bottom:8px;
+  }
+  .section-head h2{font-size:28px;}
+
+  /* ---------- VIDEO ---------- */
+  .screening-group{display:grid;gap:18px;}
+  .screening{
+    position:relative;padding-top:56.25%;height:0;overflow:hidden;
+    background:var(--surface);border:1px solid var(--hair);
+  }
+  .screening iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+  /* ---------- GALLERY (editorial spread) ---------- */
+  .spread{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair);
+  }
+  .spread a{display:block;overflow:hidden;background:var(--surface);}
+  .spread img{
+    width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .spread a:hover img{transform:scale(1.045);}
+
+  /* ---------- PROGRAM (career highlights) ---------- */
+  .program-intro{max-width:600px;margin:0 auto 36px;text-align:center;color:var(--muted);font-size:15px;}
+  .program-list{display:grid;grid-template-columns:1fr;border-top:1px solid var(--hair);}
+  .movement{
+    padding:24px 4px;border-bottom:1px solid var(--hair);
+  }
+  .movement h3{font-size:18.5px;letter-spacing:.01em;margin-bottom:8px;}
+  .movement p{margin:0;color:var(--muted);font-size:14.5px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:46px 0 54px;text-align:center;}
+  footer .mark{font-family:'Fraunces',serif;font-style:italic;font-size:21px;margin-bottom:12px;}
+  footer .contact{font-size:13.5px;color:var(--muted);}
+  footer a{border-bottom:1px solid var(--hair);text-decoration:none;color:var(--ink);}
+  footer .note{margin-top:18px;font-family:'Fraunces',serif;font-style:italic;color:var(--accent);font-size:13.5px;}
+  footer .contact-label{
+    margin-top:26px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  }
+
+  @media(min-width:680px){
+    .screening-group{grid-template-columns:1fr 1fr;}
+    .program-list{grid-template-columns:1fr 1fr;border-bottom:1px solid var(--hair);}
+    .movement{border-bottom:none;}
+    .movement:nth-child(odd){border-right:1px solid var(--hair);}
+  }
+</style>
+</head>
+<body>
+
+  <header class="cover">
+    <div class="wrap">
+      <p class="kicker">Prezentare formație artistică</p>
+      <p class="brand">Ansamblu de muzică veche din Cluj-Napoca</p>
+      <h1>Ansamblul Flauto Dolce</h1>
+      <p class="subtitle">Cu instrumente de epocă și practică interpretativă autentică</p>
+    </div>
+    <div class="hero-photo">
+      <img src="images/2.jpg" alt="Ansamblul Flauto Dolce – concert în biserică, formație extinsă" loading="lazy">
+    </div>
+    <div class="wrap">
+      <div class="rule"></div>
+      <p class="lead">
+        Activitate documentată prin CD-uri, transmisii radio, filmări TV și peste 500 de concerte,
+        cu turnee în Austria, Spania, Italia, Franța, Israel, Elveția și alte țări europene.
+        Toți membrii sunt absolvenți ai Academiei de Muzică „Gheorghe Dima" din Cluj-Napoca.
+      </p>
+      <p class="instrumentation">
+        Flaut drept<span class="sep">·</span>Flaut drept<span class="sep">·</span>Clavecin
+      </p>
+      <p class="facts">Trio instrumental</p>
+      <p class="variant">Variantă extinsă: + soprană, percuție</p>
+    </div>
+  </header>
+
+  <section id="video">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Înregistrări</span>
+        <h2>Video</h2>
+      </div>
+      <div class="screening-group">
+        <div class="screening">
+          <iframe src="https://www.youtube.com/embed/iSc2rzhk-tw" title="Ansamblul Flauto Dolce – Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="screening">
+          <iframe src="https://www.youtube.com/embed/8-DB9FB_1qY" title="Ansamblul Flauto Dolce – Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="screening">
+          <iframe src="https://www.youtube.com/embed/M3-fyBSEfXI" title="Ansamblul Flauto Dolce – Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Din arhivă</span>
+        <h2>Galerie foto</h2>
+      </div>
+    </div>
+    <div class="spread">
+      <a href="images/1.jpg" target="_blank" rel="noopener"><img src="images/1.jpg" alt="Ansamblul Flauto Dolce – concert la altar, cu instrumente de epocă" loading="lazy"></a>
+      <a href="images/2.jpg" target="_blank" rel="noopener"><img src="images/2.jpg" alt="Ansamblul Flauto Dolce – concert în biserică, formație extinsă" loading="lazy"></a>
+      <a href="images/3.jpg" target="_blank" rel="noopener"><img src="images/3.jpg" alt="Ansamblul Flauto Dolce – discografie" loading="lazy"></a>
+      <a href="images/4.jpg" target="_blank" rel="noopener"><img src="images/4.jpg" alt="Ansamblul Flauto Dolce – la finalul unui concert" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section id="parcurs">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Activitate</span>
+        <h2>Parcurs artistic</h2>
+      </div>
+      <p class="program-intro">
+        Peste două decenii de activitate concertistică, documentată prin înregistrări,
+        turnee internaționale și colaborări europene.
+      </p>
+      <div class="program-list">
+        <div class="movement">
+          <h3>Concerte &amp; turnee</h3>
+          <p>Peste 500 de concerte; turnee în Austria, Argentina, Spania, Italia, Franța, Israel, Elveția, Germania, Slovenia, Serbia, Slovacia și Ungaria</p>
+        </div>
+        <div class="movement">
+          <h3>Discografie</h3>
+          <p>Activitate documentată prin CD-uri, transmisii radio și filmări TV</p>
+        </div>
+        <div class="movement">
+          <h3>Proiecte europene</h3>
+          <p>Program Cultura al Uniunii Europene; proiect UNESCO „Cultural Heritage – a Bridge towards a Shared Future"; invitați speciali la The 5th International Early Music Seminar, Tel Aviv (2014)</p>
+        </div>
+        <div class="movement">
+          <h3>Formare</h3>
+          <p>Absolvenți ai Academiei de Muzică „Gheorghe Dima" din Cluj-Napoca, cu perfecționare la cursuri de măiestrie în străinătate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="mark">Flauto Dolce</p>
+      <p class="note">Contactați-ne pentru o ofertă personalizată pentru evenimentul dumneavoastră.</p>
+      <p class="contact-label">Informații generale și rezervări</p>
+      <p class="contact"><a href="tel:0721262464">0721 262 464</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
