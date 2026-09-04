@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Transilvania Philharmonic Brass — Ofertă artistică</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,560;1,9..144,450&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f6f4;
+    --surface:#ffffff;
+    --ink:#24262b;
+    --muted:#787c82;
+    --accent:#a3803f;
+    --accent-quiet:#c7ac78;
+    --hair:rgba(36,38,43,.14);
+    --maxw:900px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Instrument Sans',sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;}
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:450;
+    margin:0;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  a{color:inherit;}
+
+  /* ---------- COVER ---------- */
+  .cover{padding:70px 0 54px;text-align:center;}
+  .cover .kicker{
+    font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 20px;
+  }
+  .cover .brand{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 30px;
+  }
+  .cover h1{
+    font-size:clamp(30px,5.8vw,46px);font-style:normal;font-weight:450;line-height:1.18;
+    letter-spacing:.003em;
+  }
+  .cover .subtitle{
+    margin-top:12px;font-family:'Fraunces',serif;font-size:18px;color:var(--accent);
+  }
+  .hero-photo{
+    margin:34px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  }
+  .hero-photo img{
+    width:100%;display:block;aspect-ratio:3/2;object-fit:cover;
+  }
+  .rule{width:1px;height:40px;background:linear-gradient(var(--accent-quiet),transparent);margin:30px auto;}
+  .cover p.lead{max-width:580px;margin:0 auto;font-size:16px;color:var(--muted);}
+  .instrumentation{
+    margin-top:32px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);
+  }
+  .instrumentation .sep{color:var(--accent);padding:0 10px;}
+  .cover .facts{
+    margin-top:14px;font-size:13.5px;color:var(--muted);font-style:italic;font-family:'Fraunces',serif;
+  }
+  .cover .roster{
+    margin-top:10px;font-size:12.5px;color:var(--muted);font-style:italic;font-family:'Fraunces',serif;
+    max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6;
+  }
+
+  section{padding:52px 0;border-top:1px solid var(--hair);}
+  .section-head{text-align:center;margin-bottom:34px;}
+  .section-head .num{
+    display:block;font-family:'Fraunces',serif;font-style:italic;
+    color:var(--accent);font-size:13.5px;letter-spacing:.05em;margin-bottom:8px;
+  }
+  .section-head h2{font-size:28px;}
+
+  /* ---------- VIDEO ---------- */
+  .screening-group{display:grid;gap:18px;}
+  .screening{
+    position:relative;padding-top:56.25%;height:0;overflow:hidden;
+    background:var(--surface);border:1px solid var(--hair);
+  }
+  .screening iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+  /* ---------- GALLERY (single archive frame) ---------- */
+  .spread{
+    max-width:520px;margin:0 auto;background:var(--hair);
+  }
+  .spread a{display:block;overflow:hidden;background:var(--surface);}
+  .spread img{
+    width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .spread a:hover img{transform:scale(1.045);}
+
+  /* ---------- PROGRAM (repertoire) ---------- */
+  .program-intro{max-width:600px;margin:0 auto 36px;text-align:center;color:var(--muted);font-size:15px;}
+  .program-list{display:grid;grid-template-columns:1fr;border-top:1px solid var(--hair);}
+  .movement{
+    padding:24px 4px;border-bottom:1px solid var(--hair);
+  }
+  .movement h3{font-size:18.5px;letter-spacing:.01em;margin-bottom:8px;}
+  .movement ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px;}
+  .movement li{margin-bottom:4px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:46px 0 54px;text-align:center;}
+  footer .mark{font-family:'Fraunces',serif;font-style:italic;font-size:20px;margin-bottom:12px;text-wrap:balance;}
+  footer .contact{font-size:13.5px;color:var(--muted);}
+  footer a{border-bottom:1px solid var(--hair);text-decoration:none;color:var(--ink);}
+  footer .note{margin-top:18px;font-family:'Fraunces',serif;font-style:italic;color:var(--accent);font-size:13.5px;}
+  footer .contact-label{
+    margin-top:26px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  }
+
+  @media(min-width:680px){
+    .screening-group{grid-template-columns:1fr 1fr;}
+    .program-list{grid-template-columns:1fr 1fr;border-bottom:1px solid var(--hair);}
+    .movement{border-bottom:none;}
+    .movement:nth-child(odd){border-right:1px solid var(--hair);}
+  }
+</style>
+</head>
+<body>
+
+  <header class="cover">
+    <div class="wrap">
+      <p class="kicker">Prezentare formație artistică</p>
+      <p class="brand">Artiștii Filarmonicii de Stat Transilvania</p>
+      <h1>Transilvania Philharmonic Brass</h1>
+      <p class="subtitle">Cvintet de suflători</p>
+    </div>
+    <div class="hero-photo">
+      <img src="images/1.jpg" alt="Transilvania Philharmonic Brass – cvintet, vedere de sus" loading="lazy">
+    </div>
+    <div class="wrap">
+      <div class="rule"></div>
+      <p class="lead">
+        Cvintet cameral înființat în 2015 din inițiativa unor membri ai Filarmonicii clujene, cu un
+        repertoriu ce parcurge stiluri de la baroc la jazz. Membrii au concertat în numeroase
+        transmisiuni radio-tv, festivaluri și turnee internaționale, colaborând și cu Orchestra
+        Română de Tineret sau Orchestra Națională Simfonică a României.
+      </p>
+      <p class="instrumentation">
+        2× Trompetă<span class="sep">·</span>Corn<span class="sep">·</span>Trombon<span class="sep">·</span>Tubă
+      </p>
+      <p class="facts">Cvintet fix — 5 artiști</p>
+      <p class="roster">
+        Gabriel Gyarmati &amp; Iosif Sătmărean — trompetă · Gabriel Cupșa — corn ·
+        Leonard Neamț — trombon · Alexandru Corlan — tubă
+      </p>
+    </div>
+  </header>
+
+  <section id="video">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Înregistrări</span>
+        <h2>Video</h2>
+      </div>
+      <div class="screening-group">
+        <div class="screening">
+          <iframe src="https://www.youtube.com/embed/mV0II9mupf8" title="Transilvania Philharmonic Brass – Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="screening">
+          <iframe src="https://www.youtube.com/embed/7T8AVRC38zk" title="Transilvania Philharmonic Brass – Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Din arhivă</span>
+        <h2>Galerie foto</h2>
+      </div>
+    </div>
+    <div class="spread">
+      <a href="images/2.jpg" target="_blank" rel="noopener"><img src="images/2.jpg" alt="Transilvania Philharmonic Brass – portret de grup, alb-negru" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section id="repertoriu">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Propuneri</span>
+        <h2>Repertoriu</h2>
+      </div>
+      <p class="program-intro">
+        Un traseu cronologic ce străbate mai multe stiluri muzicale — de la baroc la jazz —
+        cu unele dintre cele mai îndrăgite arii de operă, transpuse în timbrul distinct al
+        alămurilor. Programul poate fi adaptat specificului evenimentului dumneavoastră.
+      </p>
+      <div class="program-list">
+        <div class="movement">
+          <h3>Baroc</h3>
+          <ul>
+            <li>Pagini reprezentative ale perioadei baroce</li>
+          </ul>
+        </div>
+        <div class="movement">
+          <h3>Clasicism &amp; impresionism</h3>
+          <ul>
+            <li>Lucrări din clasicism și impresionism</li>
+          </ul>
+        </div>
+        <div class="movement">
+          <h3>Jazz</h3>
+          <ul>
+            <li>Standarde și aranjamente de jazz</li>
+          </ul>
+        </div>
+        <div class="movement">
+          <h3>Arii de operă</h3>
+          <ul>
+            <li>Cele mai emblematice arii de operă, transpuse pentru cvintet de alamă</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="mark">Transilvania Philharmonic Brass</p>
+      <p class="note">Contactați-ne pentru o ofertă personalizată pentru evenimentul dumneavoastră.</p>
+      <p class="contact-label">Informații generale și rezervări</p>
+      <p class="contact"><a href="tel:0721262464">0721 262 464</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
