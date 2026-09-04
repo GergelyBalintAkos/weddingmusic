@@ -51,10 +51,17 @@
     color:var(--muted);margin:0 0 30px;
   }
   .cover h1{
-    font-size:clamp(36px,7vw,56px);font-style:italic;font-weight:450;line-height:1.1;
+    font-size:clamp(30px,5.8vw,46px);font-style:normal;font-weight:450;line-height:1.18;
+    letter-spacing:.003em;
   }
   .cover .subtitle{
     margin-top:12px;font-family:'Fraunces',serif;font-size:18px;color:var(--accent);
+  }
+  .hero-photo{
+    margin:34px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  }
+  .hero-photo img{
+    width:100%;display:block;aspect-ratio:3/2;object-fit:cover;
   }
   .rule{width:1px;height:40px;background:linear-gradient(var(--accent-quiet),transparent);margin:30px auto;}
   .cover p.lead{max-width:560px;margin:0 auto;font-size:16px;color:var(--muted);}
@@ -139,6 +146,11 @@
       <p class="brand">Classis</p>
       <h1>Formația Classis</h1>
       <p class="subtitle">Orchestră de salon</p>
+    </div>
+    <div class="hero-photo">
+      <img src="images/1.jpg" alt="Formația Classis – pian cu coadă și vioară, sală cu candelabre" loading="lazy">
+    </div>
+    <div class="wrap">
       <div class="rule"></div>
       <p class="lead">
         Majoritatea artiștilor formației fac parte din Orchestra Filarmonicii de Stat „Transilvania”.
