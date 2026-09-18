@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /oferte/
+
+Sitemap: https://www.weddingmusic.ro/sitemap.xml
