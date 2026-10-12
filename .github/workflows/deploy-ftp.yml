@@ -1,0 +1,53 @@
+name: Deploy to cPanel (FTP)
+
+# Manual only. Choose the target when you run it:
+#   test = test.weddingmusic.ro  (FTP account chrooted to its document root)
+#   live = www.weddingmusic.ro   (FTP account for public_html)
+#
+# Repository secrets required:
+#   FTP_SERVER                   host name of the cPanel FTP server
+#   FTP_USERNAME / FTP_PASSWORD  test FTP account
+#   FTP_LIVE_USERNAME / FTP_LIVE_PASSWORD  live FTP account
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Where to deploy"
+        type: choice
+        options:
+          - test
+          - live
+        default: test
+
+concurrency:
+  group: "ftp-deploy-${{ inputs.target }}"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ inputs.target == 'live' && secrets.FTP_LIVE_USERNAME || secrets.FTP_USERNAME }}
+          password: ${{ inputs.target == 'live' && secrets.FTP_LIVE_PASSWORD || secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ./
+          # Only files this action uploaded earlier are ever deleted
+          # (tracked in .ftp-deploy-sync-state.json); existing WordPress
+          # files are left alone.
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            .claude/**
+            .gitignore
+            compress-images.ps1
+            **/Thumbs.db
+            **/.DS_Store
