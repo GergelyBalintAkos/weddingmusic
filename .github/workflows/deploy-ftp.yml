@@ -2,7 +2,7 @@ name: Deploy to cPanel (FTP)
 
 # Manual only. Choose the target when you run it:
 #   test = test.weddingmusic.ro  (FTP account chrooted to its document root)
-#   live = www.weddingmusic.ro   (FTP account for public_html)
+#   live = www.classis.ro        (FTP account for public_html; weddingmusic.ro 301s here)
 #
 # Repository secrets required:
 #   FTP_SERVER                   host name of the cPanel FTP server

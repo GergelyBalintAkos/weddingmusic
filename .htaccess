@@ -1,5 +1,6 @@
 # ---------------------------------------------------------------
-# weddingmusic.ro - static site (replaces the old WordPress site)
+# www.classis.ro (formerly www.weddingmusic.ro) - static site
+# (replaces the old WordPress site)
 # Requires Apache / LiteSpeed with mod_rewrite + mod_alias.
 # ---------------------------------------------------------------
 
@@ -23,20 +24,21 @@ DirectoryIndex index.html
 </IfModule>
 
 # --- Other domains served from this folder -> the main site (301) ---
-# classis.ro / artist-center.ro point at public_html too; the old WordPress
-# redirected them to www.weddingmusic.ro, so keep doing that (path preserved,
-# so the old-URL rules below still apply on the second hop).
+# www.classis.ro is the main domain. weddingmusic.ro (the previous main
+# domain) and artist-center.ro point at public_html too: send them to
+# www.classis.ro with the path preserved, so the old-URL rules below still
+# apply on the second hop. test.weddingmusic.ro is NOT matched here.
 <IfModule mod_rewrite.c>
-  RewriteCond %{HTTP_HOST} ^(www\.)?(classis|artist-center)\.ro$ [NC]
-  RewriteRule ^(.*)$ https://www.weddingmusic.ro/$1 [L,R=301,NE]
+  RewriteCond %{HTTP_HOST} ^(www\.)?(weddingmusic|artist-center)\.ro$ [NC]
+  RewriteRule ^(.*)$ https://www.classis.ro/$1 [L,R=301,NE]
 </IfModule>
 
 # --- Canonical host: https + www (production domain only) ---
 <IfModule mod_rewrite.c>
-  RewriteCond %{HTTP_HOST} ^weddingmusic\.ro$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^classis\.ro$ [NC,OR]
   RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP_HOST} ^(www\.)?weddingmusic\.ro$ [NC]
-  RewriteRule ^ https://www.weddingmusic.ro%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^(www\.)?classis\.ro$ [NC]
+  RewriteRule ^ https://www.classis.ro%{REQUEST_URI} [L,R=301]
 
   # /index.html, /en/index.html, /hu/index.html -> folder URL
   RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?]
@@ -46,10 +48,10 @@ DirectoryIndex index.html
 # --- Old WordPress URLs -> new pages (301) / removed pages (410) ---
 # mod_rewrite (not mod_alias) so these rules are NOT inherited by other sites
 # living in sub-folders of public_html (e.g. /musicalevents).
-# They apply to www.weddingmusic.ro only: S=11 skips the 11 rules below for
+# They apply to www.classis.ro only: S=11 skips the 11 rules below for
 # any other host. If you add or remove a rule, update the number.
 <IfModule mod_rewrite.c>
-  RewriteCond %{HTTP_HOST} !^www\.weddingmusic\.ro$ [NC]
+  RewriteCond %{HTTP_HOST} !^www\.classis\.ro$ [NC]
   RewriteRule ^ - [S=11]
 
   # Specific pages first (first match wins thanks to L)
