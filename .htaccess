@@ -10,10 +10,12 @@ DirectoryIndex index.html
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/xml image/svg+xml
 </IfModule>
 
-# --- Non-production hosts (e.g. test.weddingmusic.ro): keep out of search ---
+# --- Test host only (test.weddingmusic.ro): keep out of search ---
+# Deliberately NOT "every host except production": other sites/subdomains
+# living under public_html would inherit this file.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTP_HOST} !^(www\.)?weddingmusic\.ro$ [NC]
+  RewriteCond %{HTTP_HOST} ^test\.weddingmusic\.ro$ [NC]
   RewriteRule ^ - [E=NOINDEX:1]
 </IfModule>
 <IfModule mod_headers.c>
