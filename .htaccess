@@ -29,7 +29,10 @@ DirectoryIndex index.html
 # www.classis.ro with the path preserved, so the old-URL rules below still
 # apply on the second hop. test.weddingmusic.ro is NOT matched here.
 <IfModule mod_rewrite.c>
+  # Google Search Console HTML-file verification (googleXXXX.html) must be
+  # served on the old host itself, not redirected.
   RewriteCond %{HTTP_HOST} ^(www\.)?(weddingmusic|artist-center)\.ro$ [NC]
+  RewriteCond %{REQUEST_URI} !^/google[0-9a-f]+\.html$
   RewriteRule ^(.*)$ https://www.classis.ro/$1 [L,R=301,NE]
 </IfModule>
 
