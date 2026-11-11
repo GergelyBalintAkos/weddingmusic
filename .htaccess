@@ -22,6 +22,15 @@ DirectoryIndex index.html
   Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX
 </IfModule>
 
+# --- Other domains served from this folder -> the main site (301) ---
+# classis.ro / artist-center.ro point at public_html too; the old WordPress
+# redirected them to www.weddingmusic.ro, so keep doing that (path preserved,
+# so the old-URL rules below still apply on the second hop).
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_HOST} ^(www\.)?(classis|artist-center)\.ro$ [NC]
+  RewriteRule ^(.*)$ https://www.weddingmusic.ro/$1 [L,R=301,NE]
+</IfModule>
+
 # --- Canonical host: https + www (production domain only) ---
 <IfModule mod_rewrite.c>
   RewriteCond %{HTTP_HOST} ^weddingmusic\.ro$ [NC,OR]
@@ -34,27 +43,31 @@ DirectoryIndex index.html
   RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301,NE]
 </IfModule>
 
-# --- Old WordPress URLs -> new pages (301) ---
-# Specific pages first (mod_alias uses the first match).
-RedirectMatch 301 ^/services/?$                               /servicii.html
-RedirectMatch 301 ^/pages/about-us/?$                         /despre-noi.html
-RedirectMatch 301 ^/pages/contact/?$                          /contact.html
-RedirectMatch 301 ^/dotari-sonorizare/?$                      /dotari-tehnice.html
-RedirectMatch 301 ^/inchiriere-videoproiector-si-ecran/?$     /dotari-tehnice.html
-RedirectMatch 301 ^/repertoriul-general-weddingmusic/?$       /repertoriu.html
-RedirectMatch 301 ^/repertoriu-crestin-penticostal/?$         /repertoriu.html
-RedirectMatch 301 ^/repertoriu-imnuri-crestine-adventiste/?$  /repertoriu.html
-RedirectMatch 301 ^/privacy-policy-2/?$                       /confidentialitate.html
-RedirectMatch 301 ^/videos/?$                                 /videogalerie.html
-RedirectMatch 301 ^/blog/?$                                   /portofoliu.html
+# --- Old WordPress URLs -> new pages (301) / removed pages (410) ---
+# mod_rewrite (not mod_alias) so these rules are NOT inherited by other sites
+# living in sub-folders of public_html (e.g. /musicalevents).
+# They apply to www.weddingmusic.ro only: S=11 skips the 11 rules below for
+# any other host. If you add or remove a rule, update the number.
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_HOST} !^www\.weddingmusic\.ro$ [NC]
+  RewriteRule ^ - [S=11]
 
-# Press / event blog posts -> portfolio
-RedirectMatch 301 ^/(concert-de-craciun-viseu-de-sus|formatia-classis-[a-z0-9-]+|cvartetul-classis-[a-z0-9-]+|orchestra-classis-[a-z0-9-]+|soprana-cristina-oltean-[a-z0-9-]+|primul-concert-anatholis-classis|anatholis-classis-[a-z0-9-]+|revelionul-2013-la-cluj-si-turda|articol-de-presa-[a-z0-9-]+|diploma-pentru-organizarea-concertelor-clasice|pianistul-formatiei-classis-[a-z0-9-]+|(martie|aprilie|mai|august)-2015-[a-z0-9-]+)/?$ /portofoliu.html
-# Agency / impresariat posts -> services
-RedirectMatch 301 ^/(prima-formatie-de-muzica-live-[a-z0-9-]+|societatea-noastra-de-interpretare-[a-z0-9-]+|proiect-de-concert-in-aer-liber-[a-z0-9-]+|mii-de-oameni-[a-z0-9-]+|compania-noastra-de-impresariat-[a-z0-9-]+)/?$ /servicii.html
+  # Specific pages first (first match wins thanks to L)
+  RewriteRule ^pages/about-us/?$ /despre-noi.html [R=301,L]
+  RewriteRule ^pages/contact/?$ /contact.html [R=301,L]
+  RewriteRule ^(dotari-sonorizare|inchiriere-videoproiector-si-ecran)/?$ /dotari-tehnice.html [R=301,L]
+  RewriteRule ^(repertoriul-general-weddingmusic|repertoriu-crestin-penticostal|repertoriu-imnuri-crestine-adventiste)/?$ /repertoriu.html [R=301,L]
+  RewriteRule ^privacy-policy-2/?$ /confidentialitate.html [R=301,L]
+  RewriteRule ^videos/?$ /videogalerie.html [R=301,L]
 
-# Theme demo / template leftovers -> gone (410)
-RedirectMatch 410 ^/(elements|shop|discography|albums|events|event|gallery|release|home|landing|artist|pages|custom-404|sample-page|hello-world|whats-new-in-version-3)(/|$)
-RedirectMatch 410 ^/blog/.+
-RedirectMatch 410 ^/videos/.+
-RedirectMatch 410 ^/(wp-admin|wp-content/plugins|wp-content/themes|wp-includes|wp-json|xmlrpc\.php|feed|comments)(/|$)
+  # Services page + agency / impresariat posts -> services
+  RewriteRule ^(services|prima-formatie-de-muzica-live-[a-z0-9-]+|societatea-noastra-de-interpretare-[a-z0-9-]+|proiect-de-concert-in-aer-liber-[a-z0-9-]+|mii-de-oameni-[a-z0-9-]+|compania-noastra-de-impresariat-[a-z0-9-]+)/?$ /servicii.html [R=301,L]
+
+  # Blog index + press / event posts -> portfolio
+  RewriteRule ^(blog|concert-de-craciun-viseu-de-sus|formatia-classis-[a-z0-9-]+|cvartetul-classis-[a-z0-9-]+|orchestra-classis-[a-z0-9-]+|soprana-cristina-oltean-[a-z0-9-]+|primul-concert-anatholis-classis|anatholis-classis-[a-z0-9-]+|revelionul-2013-la-cluj-si-turda|articol-de-presa-[a-z0-9-]+|diploma-pentru-organizarea-concertelor-clasice|pianistul-formatiei-classis-[a-z0-9-]+|(martie|aprilie|mai|august)-2015-[a-z0-9-]+)/?$ /portofoliu.html [R=301,L]
+
+  # Theme demo / template leftovers -> gone (410)
+  RewriteRule ^(elements|shop|discography|albums|events|event|gallery|release|home|landing|artist|pages|custom-404|sample-page|hello-world|whats-new-in-version-3)(/|$) - [G,L]
+  RewriteRule ^(blog|videos)/.+ - [G,L]
+  RewriteRule ^(wp-admin|wp-content/plugins|wp-content/themes|wp-includes|wp-json|xmlrpc\.php|feed|comments)(/|$) - [G,L]
+</IfModule>
