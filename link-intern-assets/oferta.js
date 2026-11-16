@@ -28,7 +28,7 @@
     note: `margin:0 0 12px;font-family:${SANS};font-size:13px;font-style:italic;line-height:1.55;color:${C.muted}`,
     rl: `font-family:${SANS};font-size:15px;font-weight:bold;line-height:1.45;color:${C.ink}`,
     rs: `font-family:${SANS};font-size:14px;line-height:1.5;color:${C.muted}`,
-    rv: `font-family:${SERIF};font-size:19px;line-height:1.3;color:${C.deep}`
+    rv: `font-family:${SANS};font-size:15px;font-weight:bold;line-height:1.45;color:${C.deep}`
   };
 
   const inline = html => html.replace(/<a /g, `<a style="color:${C.deep};text-decoration:underline" `);
@@ -89,7 +89,7 @@
     const head =
       `<tr><td align="center" style="padding:30px 24px 22px">` +
       `<div data-n="brand" style="font-family:${SERIF};font-size:26px;letter-spacing:6px;line-height:1.2;color:${C.ink}">CLASSIS</div>` +
-      `<div data-n="brandsub" style="margin-top:5px;font-family:${SANS};font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${C.deep}">by WeddingMusic</div>` +
+      `<div data-n="brandsub" style="margin-top:5px;font-family:${SANS};font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${C.deep}">by Weddingmusic</div>` +
       `</td></tr>`;
     return `<table data-card role="presentation" width="100%" cellpadding="0" cellspacing="0" ` +
       `style="width:100%;max-width:640px;margin:0 auto;border-collapse:collapse;background-color:#ffffff;border:1px solid #eadfca">` +
@@ -304,6 +304,8 @@
         default: gap(); lines.push(plain(it.runs));
       }
     });
+    gap();
+    lines.push('Classis by Weddingmusic');
     return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
   }
 
@@ -427,7 +429,7 @@
         margin: [0, 0, 0, 8],
         table: { widths: ['*', 'auto'], body: rows.map(r => [
           { text: pr(r.label), color: C.ink },
-          { text: pr(r.value), font: 'Playfair', fontSize: 13, color: C.deep, alignment: 'right', noWrap: true }
+          { text: pr(r.value), bold: true, color: C.deep, alignment: 'right', noWrap: true }
         ]) },
         layout: {
           hLineWidth: (i, node) => (i > 0 && i < node.table.body.length ? 0.6 : 0),
@@ -498,13 +500,13 @@
     return {
       pageSize: 'A4',
       pageMargins: [46, 44, 46, 56],
-      info: { title: OFFER.shareTitle, author: 'CLASSIS' },
+      info: { title: OFFER.shareTitle, author: 'Classis by Weddingmusic' },
       defaultStyle: { font: 'Roboto', fontSize: 10.5, lineHeight: 1.3, color: C.ink },
       content,
       footer: (page, pages) => ({
         margin: [46, 18, 46, 0],
         columns: [
-          { text: 'CLASSIS · classis.ro', link: 'https://www.classis.ro/', fontSize: 8, color: C.muted },
+          { text: 'Classis by Weddingmusic · classis.ro', link: 'https://www.classis.ro/', fontSize: 8, color: C.muted },
           { text: page + ' / ' + pages, fontSize: 8, color: C.muted, alignment: 'right' }
         ]
       }),
