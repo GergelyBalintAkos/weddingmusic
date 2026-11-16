@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const items    = Array.from(document.querySelectorAll('.track-item'));
+  const items    = Array.from(document.querySelectorAll('.track-item:not(.is-pending)'));
   const playerBar  = document.getElementById('playerBar');
   const playerTitle  = document.getElementById('playerTitle');
   const playerArtist = document.getElementById('playerArtist');
