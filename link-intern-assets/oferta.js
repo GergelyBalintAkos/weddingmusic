@@ -40,6 +40,8 @@
     switch (x.k) {
       case 'p':
         return `<p data-n="p" data-ed style="${S.p}">${inline(x.h)}</p>`;
+      case 'to':
+        return `<p data-n="to" hidden style="${S.p}">Către: <b data-name></b></p>`;
       case 'sub':
         return `<div data-n="sub" data-ed style="${S.sub}">${inline(x.h)}</div>`;
       case 'note':
@@ -64,7 +66,7 @@
           `<td bgcolor="${C.deep}" style="background-color:${C.deep};border-radius:4px;padding:12px 22px">` +
           `<a href="${attrEsc(x.href)}" style="font-family:${SANS};font-size:15px;font-weight:bold;line-height:1.35;color:#ffffff;text-decoration:none"><span data-lbl data-ed>${x.label}</span></a>` +
           `</td></tr></table>` +
-          `<div style="margin-top:6px;font-family:${SANS};font-size:13px;line-height:1.4;word-break:break-all"><a href="${attrEsc(x.href)}" style="color:${C.deep};text-decoration:underline">${shortUrl(x.href)}</a></div></div>`;
+          (x.label === shortUrl(x.href) ? '' : `<div style="margin-top:6px;font-family:${SANS};font-size:13px;line-height:1.4;word-break:break-all"><a href="${attrEsc(x.href)}" style="color:${C.deep};text-decoration:underline">${shortUrl(x.href)}</a></div>`) + `</div>`;
     }
     return '';
   }
@@ -151,7 +153,10 @@
   /* ---------- quick fields ---------- */
   function applyName() {
     const sp = $('[data-name]', card);
-    if (sp) sp.textContent = nameInput.value.trim() ? ', ' + nameInput.value.trim() : '';
+    if (!sp) return;
+    const v = nameInput.value.trim();
+    sp.textContent = v;
+    if (sp.parentNode) sp.parentNode.hidden = !v;
   }
   function applyEvent() {
     const ev = $('[data-n="event"]', card);
@@ -463,7 +468,7 @@
           content.push({ text: plain(it.runs), fontSize: 10, alignment: 'center', color: C.muted, margin: [0, 2, 0, 4] });
           break;
         case 'h':
-          content.push({ text: plain(it.runs).toLocaleUpperCase('ro'), bold: true, fontSize: 8.5, characterSpacing: 1.4, color: C.deep, margin: [0, 16, 0, 0], headlineLevel: 1 });
+          content.push({ text: plain(it.runs).toLocaleUpperCase('ro'), bold: true, fontSize: 8.5, characterSpacing: 1.4, color: C.deep, margin: [0, 16, 0, 0], headlineLevel: 1, isSection: true });
           content.push(rule(C.line, 0.7, 4, 7));
           break;
         case 'sub':
@@ -487,8 +492,8 @@
                 table: { widths: ['auto'], body: [[{ text: it.label, link: it.href, color: '#ffffff', bold: true, fontSize: 10.5, margin: [12, 6, 12, 6] }]] },
                 layout: { fillColor: () => C.deep, hLineWidth: () => 0, vLineWidth: () => 0 }
               },
-              { text: shortUrl(it.href), link: it.href, color: C.deep, decoration: 'underline', fontSize: 8.5, margin: [0, 3, 0, 0] }
-            ]
+              it.label.trim() === shortUrl(it.href) ? null : { text: shortUrl(it.href), link: it.href, color: C.deep, decoration: 'underline', fontSize: 8.5, margin: [0, 3, 0, 0] }
+            ].filter(Boolean)
           });
           break;
         default:
@@ -497,12 +502,28 @@
     });
     flushRows();
 
+    // keep every heading together with the content right after it (no orphan
+    // headings at the bottom of a page): group heading (+ rule) + first block, and
+    // for a sub-heading directly under a section heading also its list
+    const grouped = [];
+    for (let i = 0; i < content.length; i++) {
+      const n = content[i];
+      if (n.headlineLevel !== 1) { grouped.push(n); continue; }
+      const grp = [n];
+      let j = i + 1;
+      if (n.isSection && content[j]) grp.push(content[j++]);            // the rule under a section heading
+      if (content[j]) grp.push(content[j++]);                           // first block after it
+      if (grp[grp.length - 1].headlineLevel === 1 && content[j]) grp.push(content[j++]); // sub-heading → its list
+      grouped.push({ unbreakable: true, stack: grp });
+      i = j - 1;
+    }
+
     return {
       pageSize: 'A4',
       pageMargins: [46, 44, 46, 56],
       info: { title: OFFER.shareTitle, author: 'Classis by Weddingmusic' },
       defaultStyle: { font: 'Roboto', fontSize: 10.5, lineHeight: 1.3, color: C.ink },
-      content,
+      content: grouped,
       footer: (page, pages) => ({
         margin: [46, 18, 46, 0],
         columns: [

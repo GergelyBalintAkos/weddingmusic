@@ -9,12 +9,13 @@
 
   window.OFFER = {
     id: 'standard-wm',
-    version: 2,
+    version: 3,
     pdfName: 'Oferta-Weddingmusic',
     shareTitle: 'Ofertă Weddingmusic',
     blocks: [
       { k: 'hello', items: [
-        { k: 'p', h: 'Bună ziua<span data-name></span>!' },
+        { k: 'to' },
+        { k: 'p', h: 'Bună ziua!' },
         { k: 'p', h: 'Conform solicitării dumneavoastră, vă trimitem oferta Weddingmusic.' },
         { k: 'p', h: 'Dacă vă interesează una dintre formațiile noastre, vă propunem să discutăm, pentru a vă oferi mai multe informații despre aspectele tehnice (amplificare, sonorizare) și artistice (repertoriul formației, melodiile alese, componența pe instrumente etc.), precum și un desfășurător recomandat pentru eveniment.' },
         { k: 'p', h: 'Dacă aveți întrebări, vă rugăm să ne sunați. Dacă nu putem răspunde, vă vom suna înapoi cât mai curând.' },
