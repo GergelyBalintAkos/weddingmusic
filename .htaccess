@@ -11,11 +11,11 @@ DirectoryIndex index.html
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/xml image/svg+xml
 </IfModule>
 
-# --- Keep out of search: the test host and the unlisted /link.intern/ page ---
+# --- Keep out of search: the test host and the unlisted /link-intern-*/ pages ---
 # Deliberately NOT "every host except production": other sites/subdomains
 # living under public_html would inherit this file.
 <IfModule mod_setenvif.c>
-  SetEnvIf Request_URI "^/link\.intern(/|$)" NOINDEX=1
+  SetEnvIf Request_URI "^/link-intern-" NOINDEX=1
 </IfModule>
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -54,17 +54,18 @@ DirectoryIndex index.html
 # --- Old WordPress URLs -> new pages (301) / removed pages (410) ---
 # mod_rewrite (not mod_alias) so these rules are NOT inherited by other sites
 # living in sub-folders of public_html (e.g. /musicalevents).
-# They apply to www.classis.ro only: S=12 skips the 12 rules below for
+# They apply to www.classis.ro only: S=13 skips the 13 rules below for
 # any other host. If you add or remove a rule, update the number.
 <IfModule mod_rewrite.c>
   RewriteCond %{HTTP_HOST} !^www\.classis\.ro$ [NC]
-  RewriteRule ^ - [S=12]
+  RewriteRule ^ - [S=13]
 
   # Specific pages first (first match wins thanks to L)
   RewriteRule ^pages/about-us/?$ /despre-noi.html [R=301,L]
   RewriteRule ^pages/contact/?$ /contact.html [R=301,L]
   RewriteRule ^(dotari-sonorizare|inchiriere-videoproiector-si-ecran)/?$ /dotari-tehnice.html [R=301,L]
-  RewriteRule ^repertoriul-general-weddingmusic/?$ /link.intern/ [R=301,L]
+  RewriteRule ^repertoriul-general-weddingmusic/?$ /link-intern-repertoriul-general/ [R=301,L]
+  RewriteRule ^link\.intern/?$ /link-intern-repertoriul-general/ [R=301,L]
   RewriteRule ^(repertoriu-crestin-penticostal|repertoriu-imnuri-crestine-adventiste)/?$ /repertoriu.html [R=301,L]
   RewriteRule ^privacy-policy-2/?$ /confidentialitate.html [R=301,L]
   RewriteRule ^videos/?$ /videogalerie.html [R=301,L]

@@ -125,7 +125,7 @@
 .track-play-btn:hover .icon-pause rect { fill: var(--ink); }
 .track-play-btn .hidden { display: none; }
 
-/* titles listed without a recording (link.intern repertoire): no player */
+/* titles listed without a recording (link-intern-* repertoire pages): no player */
 .track-item.is-pending { cursor: default; }
 .track-item.is-pending:hover {
   background: none;
