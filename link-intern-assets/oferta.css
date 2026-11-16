@@ -1,0 +1,182 @@
+/* =============================================
+   CLASSIS – internal offer tool (screen UI + print)
+   The offer card itself is styled inline (so it can be pasted into e-mail);
+   everything here is only the surrounding interface.
+   ============================================= */
+:root {
+  --gold: #b08d57;
+  --deep: #7d5f35;
+  --ink: #3e362c;
+  --muted: #726553;
+  --cream: #fbf7f1;
+  --line: #e5d9c3;
+  --ok: #2f6f4f;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: #f3ece0;
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+[hidden] { display: none !important; }
+
+.of-wrap { max-width: 720px; margin: 0 auto; padding: 0 14px; }
+
+/* ---- top bar + tabs ---- */
+.of-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+.of-top .of-wrap { padding-top: 10px; }
+.of-name {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+.of-name strong { color: var(--ink); font-weight: 600; }
+.of-tabs { display: flex; gap: 6px; padding-bottom: 10px; }
+.of-tab {
+  flex: 1;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--muted);
+  font: 600 16px/1 inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.of-tab[aria-selected="true"] {
+  background: var(--deep);
+  border-color: var(--deep);
+  color: #fff;
+}
+
+/* ---- action panels ---- */
+.of-panel { padding: 14px 0 4px; }
+.of-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.of-btn {
+  flex: 1 1 200px;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1px solid var(--deep);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--deep);
+  font: 600 16px/1.2 inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.of-btn.is-primary { background: var(--deep); color: #fff; }
+.of-btn:disabled { opacity: .45; cursor: default; }
+.of-btn:active:not(:disabled) { transform: translateY(1px); }
+.of-btn:focus-visible, .of-tab:focus-visible, .of-switch input:focus-visible {
+  outline: 3px solid rgba(176, 141, 87, .6);
+  outline-offset: 2px;
+}
+.of-msg { min-height: 1.5em; margin: 10px 2px 0; font-size: 14px; color: var(--muted); }
+.of-msg.is-ok { color: var(--ok); }
+
+/* ---- edit bar ---- */
+.of-editbar {
+  margin: 10px 0 0;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.of-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 36px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.of-switch input { width: 22px; height: 22px; accent-color: var(--deep); }
+.of-switch small { margin-left: auto; font-weight: 400; color: var(--muted); }
+.of-fields { display: grid; gap: 10px; margin-top: 12px; }
+.of-fields label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.of-fields input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: 16px/1 inherit;
+  font-family: inherit;
+  color: var(--ink);
+  background: #fffdf8;
+}
+.of-fields .of-help { margin: 0; font-size: 13px; color: var(--muted); }
+.of-fields .of-reset {
+  justify-self: start;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+.of-draft { margin: 8px 2px 0; font-size: 13px; color: var(--muted); }
+
+/* ---- the offer card on screen ---- */
+.of-stage { padding: 16px 0 60px; }
+.of-stage [data-card] { box-shadow: 0 1px 2px rgba(62, 54, 44, .06), 0 8px 24px rgba(62, 54, 44, .06); }
+
+/* ---- edit mode ---- */
+.of-edit [data-ed] {
+  outline: 1px dashed rgba(125, 95, 53, .45);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.of-edit [data-ed]:focus {
+  outline: 2px solid var(--deep);
+  background: #fffaf0;
+}
+.of-edit [data-card] { background-image: none; }
+.of-host { position: relative; }
+/* keep a free strip on the right for the delete buttons */
+.of-edit [data-rm]:not(tr) { padding-right: 44px !important; }
+.of-edit [data-n="h"] { padding-right: 44px !important; }
+.of-host > .of-x { top: 50%; right: 4px; margin-top: -16px; }
+td.of-host > .of-x { top: 10px; right: 2px; margin-top: 0; }
+.of-x {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: #a33;
+  font: 20px/1 system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+}
+tr.of-host, td.of-host { position: relative; }
+
+/* ---- print: only the card ---- */
+@media print {
+  body { background: #fff; }
+  .of-top, .of-panel, .of-editbar, .of-draft, .of-x { display: none !important; }
+  .of-wrap { max-width: none; padding: 0; }
+  .of-stage { padding: 0; }
+  .of-stage [data-card] { box-shadow: none; border: 0 !important; max-width: none !important; }
+  tr[data-blk="sec"] { break-inside: avoid; }
+}
+
+@media (max-width: 480px) {
+  .of-btn { flex-basis: 100%; }
+}

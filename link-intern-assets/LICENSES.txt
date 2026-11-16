@@ -1,0 +1,5 @@
+Third-party files used by the internal offer tool (link-intern-oferta-*):
+
+- vendor/pdfmake.min.js (pdfmake 0.2.23) - MIT License, https://github.com/bpampuch/pdfmake
+- vendor/vfs_fonts.js (Roboto, bundled with pdfmake) - Apache License 2.0, https://github.com/googlefonts/roboto
+- fonts/PlayfairDisplay-*.ttf (Playfair Display) - SIL Open Font License 1.1, see fonts/OFL.txt
