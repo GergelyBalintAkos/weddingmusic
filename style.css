@@ -1626,3 +1626,31 @@ a.service-card { display: block; color: inherit; text-decoration: none; cursor: 
 .program-repertoire h3 { font-family: var(--font-serif); font-weight: 400; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.7rem; }
 .program-repertoire ul { margin: 0; padding-left: 1.1rem; }
 .program-repertoire li { font-size: 0.88rem; line-height: 1.75; color: var(--ink-soft); }
+.confession-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 760px;
+  columns: 2;
+  column-gap: 2.5rem;
+  text-align: left;
+}
+.confession-list li {
+  break-inside: avoid;
+  padding: 0.7rem 0 0.7rem 1.4rem;
+  border-bottom: 1px solid rgba(176, 141, 87, 0.22);
+  position: relative;
+  font-size: 0.92rem;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.confession-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 6px; height: 6px;
+  border: 1px solid var(--gold);
+  transform: translateY(-50%) rotate(45deg);
+}
+.confession-list li:last-child { font-style: italic; color: var(--ink-soft); }
+@media (max-width: 600px) { .confession-list { columns: 1; } }
