@@ -9,7 +9,7 @@
 
   window.OFFER = {
     id: 'ceremonie-masa-wm',
-    version: 1,
+    version: 2,
     pdfName: 'Oferta-Weddingmusic-Ceremonie-Masa',
     shareTitle: 'Ofertă Weddingmusic – ceremonia religioasă și masa festivă',
     blocks: [
@@ -34,7 +34,7 @@
         { k: 'ul', items: [
           'interpretare live la sosirea invitaților în restaurant, până la intrarea mirilor',
           'începerea interpretării: când sosesc aproximativ 20–25% dintre invitați',
-          'durata reprizei: între 30–45 de minute, în funcție de fiecare eveniment'
+          'durata reprizei: între 30–40 de minute, în funcție de fiecare eveniment'
         ] },
         { k: 'sub', h: 'O piesă muzicală la intrarea mirilor în restaurant' },
         { k: 'ul', items: [
@@ -42,7 +42,7 @@
         ] },
         { k: 'sub', h: 'Muzică ambientală pe durata aperitivului rece' },
         { k: 'ul', items: [
-          'această repriză durează aproximativ 30–45 de minute, în funcție de durata aperitivului, până la dansul mirilor'
+          'această repriză durează aproximativ 30–40 de minute, în funcție de durata aperitivului, până la dansul mirilor'
         ] }
       ] },
 
@@ -65,9 +65,9 @@
 
       { k: 'sec', h: 'Prețuri masa festivă:', items: [
         { k: 'prices', rows: [
-          ['Trio (trei artiști)', '500 €'],
-          ['Cvartet (patru artiști, inclusiv pian)', '600 €'],
-          ['Cvintet (cinci artiști)', '750 €'],
+          ['Trio (trei artiști)', '550 €'],
+          ['Cvartet (patru artiști, inclusiv pian)', '650 €'],
+          ['Cvintet (cinci artiști)', '800 €'],
           ['Miniorchestră (șase artiști)', 'preț la cerere']
         ] }
       ] },

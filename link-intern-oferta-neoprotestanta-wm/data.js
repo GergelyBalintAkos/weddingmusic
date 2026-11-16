@@ -9,7 +9,7 @@
 
   window.OFFER = {
     id: 'neoprotestanta-wm',
-    version: 1,
+    version: 2,
     pdfName: 'Oferta-Weddingmusic-Nunta-Neoprotestanta',
     shareTitle: 'Ofertă Weddingmusic – nuntă creștină neoprotestantă',
     blocks: [
@@ -28,7 +28,7 @@
         { k: 'sub', h: 'Muzică ambientală la sosirea invitaților în restaurant' },
         { k: 'ul', items: [
           'interpretare live la sosirea invitaților în restaurant, până la intrarea mirilor',
-          'durata reprizei: între 30–45 de minute, în funcție de fiecare eveniment'
+          'durata reprizei: între 30–40 de minute, în funcție de fiecare eveniment'
         ] },
         { k: 'sub', h: 'O piesă muzicală la intrarea mirilor în restaurant' },
         { k: 'ul', items: [
@@ -36,7 +36,7 @@
         ] },
         { k: 'sub', h: 'Muzică ambientală pe durata aperitivului rece' },
         { k: 'ul', items: [
-          'această repriză durează aproximativ 30–45 de minute, în funcție de durata aperitivului'
+          'această repriză durează aproximativ 30–40 de minute, în funcție de durata aperitivului'
         ] }
       ] },
 
@@ -44,7 +44,7 @@
         { k: 'note', h: '(patru sau cinci reprize, la fiecare fel de mâncare)' },
         { k: 'ul', items: [
           'o piesă muzicală la intrarea mirilor în restaurant',
-          'muzică ambientală la aperitivul rece (aproximativ 30–45 de minute)',
+          'muzică ambientală la aperitivul rece (aproximativ 30–40 de minute)',
           'muzică ambientală la aperitivul cald (aproximativ 25–30 de minute)',
           'marș la aducerea ceremonioasă a fripturii (dacă este cazul)',
           'muzică ambientală pe durata fripturii (aproximativ 25–30 de minute)',
