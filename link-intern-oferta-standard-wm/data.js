@@ -9,7 +9,7 @@
 
   window.OFFER = {
     id: 'standard-wm',
-    version: 3,
+    version: 4,
     pdfName: 'Oferta-Weddingmusic',
     shareTitle: 'Ofertă Weddingmusic',
     blocks: [
@@ -17,8 +17,7 @@
         { k: 'to' },
         { k: 'p', h: 'Bună ziua!' },
         { k: 'p', h: 'Conform solicitării dumneavoastră, vă trimitem oferta Weddingmusic.' },
-        { k: 'p', h: 'Dacă vă interesează una dintre formațiile noastre, vă propunem să discutăm, pentru a vă oferi mai multe informații despre aspectele tehnice (amplificare, sonorizare) și artistice (repertoriul formației, melodiile alese, componența pe instrumente etc.), precum și un desfășurător recomandat pentru eveniment.' },
-        { k: 'p', h: 'Dacă aveți întrebări, vă rugăm să ne sunați. Dacă nu putem răspunde, vă vom suna înapoi cât mai curând.' },
+        { k: 'p', h: 'Dacă aveți întrebări, nu ezitați să ne contactați.' },
         { k: 'p', h: 'Vă mulțumim!' },
         { k: 'p', h: 'Cu respect,<br><b>Balint GERGELY</b><br><a href="tel:0721262464">0721 262 464</a>' }
       ] },
@@ -32,9 +31,9 @@
           'începerea interpretării: când sosesc aproximativ 20–25% dintre invitați',
           'durata reprizei: între 30–40 de minute, în funcție de fiecare eveniment'
         ] },
-        { k: 'sub', h: 'Marșul nupțial la intrarea mirilor în restaurant' },
+        { k: 'sub', h: 'O piesă muzicală la intrarea mirilor în restaurant' },
         { k: 'ul', items: [
-          'în cazul în care se alege această opțiune, piesa este aleasă de miri din repertoriul formației'
+          'în cazul în care se optează această variantă, piesa este aleasă de miri din repertoriul formației'
         ] },
         { k: 'sub', h: 'Muzică ambientală pe durata aperitivului rece' },
         { k: 'ul', items: [
@@ -73,7 +72,7 @@
           'interpretare artistică, consultanță și organizare completă',
           'sonorizarea formației (microfoane pentru instrumente, amplificare, mixer și, la nevoie, boxe)'
         ] },
-        { k: 'note', h: '(Recomandăm să stabilim acest capitol împreună cu mirii și cu DJ-ul, deoarece sonorizarea proprie a formației garantează calitatea prestației artistice în fiecare sală.)' },
+        { k: 'note', h: '(Recomandăm să stabilim acest aspect împreună cu mirii și cu DJ-ul, deoarece sonorizarea proprie a formației garantează calitatea prestației artistice în fiecare sală.)' },
         { k: 'btn', label: 'Dotări tehnice și sonorizare – vedeți detaliile', href: DOTARI }
       ] },
 
