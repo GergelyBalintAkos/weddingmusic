@@ -10,6 +10,9 @@
   'use strict';
 
   const OFFER = window.OFFER;
+  // branding: OFFER.brandName / OFFER.brandSub override the defaults ('' hides the sub-line)
+  const BRAND_NAME = OFFER.brandName || 'Classis by Weddingmusic';
+  const BRAND_SUB = 'brandSub' in OFFER ? OFFER.brandSub : 'by Weddingmusic';
   const ASSETS = document.currentScript.src.replace(/[^/]*$/, '');
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
@@ -91,7 +94,7 @@
     const head =
       `<tr><td align="center" style="padding:30px 24px 22px">` +
       `<div data-n="brand" style="font-family:${SERIF};font-size:26px;letter-spacing:6px;line-height:1.2;color:${C.ink}">CLASSIS</div>` +
-      `<div data-n="brandsub" style="margin-top:5px;font-family:${SANS};font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${C.deep}">by Weddingmusic</div>` +
+      (BRAND_SUB ? `<div data-n="brandsub" style="margin-top:5px;font-family:${SANS};font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${C.deep}">${BRAND_SUB}</div>` : '') +
       `</td></tr>`;
     return `<table data-card role="presentation" width="100%" cellpadding="0" cellspacing="0" ` +
       `style="width:100%;max-width:640px;margin:0 auto;border-collapse:collapse;background-color:#ffffff;border:1px solid #eadfca">` +
@@ -310,7 +313,7 @@
       }
     });
     gap();
-    lines.push('Classis by Weddingmusic');
+    lines.push(BRAND_NAME);
     return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
   }
 
@@ -453,6 +456,7 @@
       switch (it.n) {
         case 'brand':
           content.push({ text: plain(it.runs), font: 'Playfair', fontSize: 24, characterSpacing: 5, alignment: 'center', color: C.ink });
+          if (!BRAND_SUB) content.push(rule(C.gold, 0.8, 14, 4));
           break;
         case 'brandsub':
           content.push({ text: plain(it.runs).toUpperCase(), fontSize: 7.5, characterSpacing: 3, alignment: 'center', color: C.deep, margin: [0, 3, 0, 0] });
@@ -521,13 +525,13 @@
     return {
       pageSize: 'A4',
       pageMargins: [46, 44, 46, 56],
-      info: { title: OFFER.shareTitle, author: 'Classis by Weddingmusic' },
+      info: { title: OFFER.shareTitle, author: BRAND_NAME },
       defaultStyle: { font: 'Roboto', fontSize: 10.5, lineHeight: 1.3, color: C.ink },
       content: grouped,
       footer: (page, pages) => ({
         margin: [46, 18, 46, 0],
         columns: [
-          { text: 'Classis by Weddingmusic · classis.ro', link: 'https://www.classis.ro/', fontSize: 8, color: C.muted },
+          { text: BRAND_NAME + ' · classis.ro', link: 'https://www.classis.ro/', fontSize: 8, color: C.muted },
           { text: page + ' / ' + pages, fontSize: 8, color: C.muted, alignment: 'right' }
         ]
       }),

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#fbf7f1" />
+  <title>Oferta ceremonie + masa WM</title>
+  <link rel="stylesheet" href="../link-intern-assets/oferta.css?v=1" />
+</head>
+<body>
+
+  <header class="of-top">
+    <div class="of-wrap">
+      <p class="of-name">Belső ajánlat · <strong>Oferta ceremonie + masa WM</strong></p>
+      <div class="of-tabs" role="tablist" aria-label="Mit szeretnél csinálni?">
+        <button class="of-tab" id="tabCopy" role="tab" aria-selected="true" aria-controls="panelCopy">Másolás</button>
+        <button class="of-tab" id="tabPdf" role="tab" aria-selected="false" aria-controls="panelPdf">PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="of-wrap">
+
+    <section class="of-panel" id="panelCopy" role="tabpanel" aria-labelledby="tabCopy">
+      <div class="of-actions">
+        <button class="of-btn is-primary" id="btnCopy" type="button">E-mail szöveg másolása</button>
+        <button class="of-btn" id="btnCopyText" type="button">Sima szöveg (WhatsApp)</button>
+      </div>
+      <p class="of-msg" id="copyMsg" role="status" aria-live="polite">Másolás után az e-mailbe beillesztve megmarad a formázás és a linkek.</p>
+    </section>
+
+    <section class="of-panel" id="panelPdf" role="tabpanel" aria-labelledby="tabPdf" hidden>
+      <div class="of-actions">
+        <button class="of-btn is-primary" id="btnShare" type="button" disabled>PDF küldése</button>
+        <button class="of-btn" id="btnOpen" type="button" disabled>Megnyitás</button>
+        <button class="of-btn" id="btnDownload" type="button" disabled>Letöltés</button>
+      </div>
+      <p class="of-msg" id="pdfMsg" role="status" aria-live="polite"></p>
+    </section>
+
+    <div class="of-editbar">
+      <label class="of-switch">
+        <input type="checkbox" id="editToggle" />
+        Szerkesztés
+        <small>összeg, szöveg, törlés</small>
+      </label>
+      <div class="of-fields" id="editFields" hidden>
+        <label>Ügyfél neve (a „Către:” sorban jelenik meg; üresen a sor elmarad)
+          <input type="text" id="fName" placeholder="pl. Maria și Andrei" autocomplete="off" />
+        </label>
+        <label>Esemény (dátum, helyszín)
+          <input type="text" id="fEvent" placeholder="pl. 12 iunie 2027, Cluj-Napoca" autocomplete="off" />
+        </label>
+        <p class="of-help">A szövegekre és az összegekre koppintva átírhatod őket. A piros × törli az adott sort vagy szakaszt.</p>
+        <button class="of-reset" id="btnReset" type="button">Visszaállítás az eredetire</button>
+      </div>
+      <p class="of-draft" id="draftNote" hidden>Ezen az eszközön elmentett módosításaid vannak.</p>
+    </div>
+
+    <main class="of-stage" id="stage"><noscript>Az oldalhoz JavaScript kell.</noscript></main>
+  </div>
+
+  <script src="../link-intern-assets/vendor/pdfmake.min.js"></script>
+  <script src="../link-intern-assets/vendor/vfs_fonts.js"></script>
+  <script src="data.js?v=1"></script>
+  <script src="../link-intern-assets/oferta.js?v=4"></script>
+</body>
+</html>
