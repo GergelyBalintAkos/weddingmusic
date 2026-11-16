@@ -1541,3 +1541,36 @@ a.service-card { display: block; color: inherit; text-decoration: none; cursor: 
   .home-intro, .home-faq { padding: 4.5rem 0; }
   .home-areas, .home-reviews { padding: 4rem 0; }
 }
+
+/* =============================================
+   WEDDING PAGE
+   ============================================= */
+.wedding-intro { padding-top: 1rem; }
+.wedding-ensembles { background: var(--cream); }
+.ensemble-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem;
+  max-width: 860px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.ensemble-list li {
+  padding: 1.4rem 1.2rem;
+  border: 1px solid rgba(176, 141, 87, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.ensemble-list strong { font-family: var(--font-serif); font-weight: 400; font-size: 1.1rem; color: var(--ink); }
+.ensemble-list span { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.6; }
+.wedding-note { max-width: 680px; margin: 0 auto; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.8; }
+.service-more { display: inline-block; margin-top: 0.8rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); }
+.service-more:hover { color: var(--gold); }
+@media (max-width: 768px) {
+  .ensemble-list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .ensemble-list { grid-template-columns: 1fr; }
+}
