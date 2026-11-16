@@ -1605,3 +1605,19 @@ a.service-card { display: block; color: inherit; text-decoration: none; cursor: 
 @media (max-width: 768px) {
   .hero-social { left: 1.25rem; bottom: 1.5rem; }
 }
+
+/* Christian wedding page: programme cards */
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+.program-card { padding: 1.75rem 1.75rem 1.5rem; border: 1px solid rgba(176, 141, 87, 0.3); background: var(--cream-mid); }
+.program-card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.9rem; }
+.program-card ul { margin: 0; padding-left: 1.1rem; }
+.program-card li { font-size: 0.88rem; line-height: 1.75; color: var(--ink-soft); margin-bottom: 0.35rem; }
+.program-card li::marker { color: var(--gold); }
+@media (max-width: 768px) { .program-grid { grid-template-columns: 1fr; } }
