@@ -166,11 +166,25 @@ td.of-host > .of-x { top: 10px; right: 2px; margin-top: 0; }
   box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
 }
 tr.of-host, td.of-host { position: relative; }
+/* new, still empty lines must stay tappable */
+.of-edit [data-ed]:empty { min-height: 1.5em; }
+.of-edit span[data-ed]:empty { display: inline-block; min-width: 4em; }
+.of-add {
+  display: block;
+  margin: 2px 0 14px;
+  padding: 6px 12px;
+  border: 1px dashed var(--deep);
+  border-radius: 4px;
+  background: #fffaf0;
+  color: var(--deep);
+  font: 600 13px/1.2 system-ui, sans-serif;
+  cursor: pointer;
+}
 
 /* ---- print: only the card ---- */
 @media print {
   body { background: #fff; }
-  .of-top, .of-panel, .of-editbar, .of-draft, .of-x { display: none !important; }
+  .of-top, .of-panel, .of-editbar, .of-draft, .of-x, .of-add { display: none !important; }
   .of-wrap { max-width: none; padding: 0; }
   .of-stage { padding: 0; }
   .of-stage [data-card] { box-shadow: none; border: 0 !important; max-width: none !important; }

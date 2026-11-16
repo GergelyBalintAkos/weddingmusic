@@ -171,6 +171,26 @@
   eventInput.addEventListener('input', () => { applyEvent(); saveDraft(); });
 
   /* ---------- edit mode ---------- */
+  // button that inserts a new, empty line (make() returns it), then focuses it
+  function addButton(make) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'of-add';
+    b.textContent = '+ új sor';
+    b.setAttribute('data-ui', '');
+    b.setAttribute('contenteditable', 'false');
+    b.addEventListener('click', ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const el = make();
+      setEditing(true);                                  // re-attach × / + buttons
+      const f = el.hasAttribute('data-ed') ? el : $('[data-ed]', el);
+      if (f) f.focus();
+      saveDraft();
+    });
+    return b;
+  }
+
   function setEditing(on) {
     editing = on;
     document.body.classList.toggle('of-edit', on);
@@ -206,6 +226,31 @@
           saveDraft();
         });
         host.insertBefore(x, host.firstChild);
+      });
+      // "+ új sor" under every list and every group of rows (formations, prices)
+      $$('[data-n="ul"]', card).forEach(ul => {
+        ul.insertAdjacentElement('afterend', addButton(() => {
+          const li = document.createElement('li');
+          li.setAttribute('data-n', 'li');
+          li.setAttribute('data-ed', '');
+          li.setAttribute('data-rm', '');
+          li.setAttribute('style', S.li);
+          ul.appendChild(li);
+          return li;
+        }));
+      });
+      $$('[data-n="row"]', card).forEach(row => {
+        const next = row.nextElementSibling;
+        if (next && next.dataset.n === 'row') return;   // only after the last row of a group
+        row.insertAdjacentElement('afterend', addButton(() => {
+          const n = row.parentNode.querySelectorAll(':scope > [data-n="row"]');
+          const last = n[n.length - 1] || row;
+          const copy = last.cloneNode(true);
+          $$('[data-ui]', copy).forEach(e => e.remove());
+          $$('[data-ed]', copy).forEach(e => { e.innerHTML = ''; });
+          last.insertAdjacentElement('afterend', copy);
+          return copy;
+        }));
       });
     } else {
       $$('.of-host', card).forEach(e => e.classList.remove('of-host'));
